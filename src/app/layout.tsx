@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import VantaNetBackground from "@/components/ui/Vantabg";
+// import VantaNetBackground from "@/components/ui/Vantabg";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 // import About from "@/app/pages/about/page"
@@ -32,12 +32,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <VantaNetBackground options={{mouseControls:false,touchControls:false}}>
+        {/* <VantaNetBackground options={{mouseControls:false,touchControls:false}}> */}
          <Navbar/>
          {/* <About/> */}
           {children}
           <Footer/>
-        </VantaNetBackground>
+        {/* </VantaNetBackground> */}
       </body>
     </html>
   );

@@ -1,11 +1,10 @@
 import React from "react";
-import Teams from "@/components/ui/Teams"
-import TestiMonials from "@/components/ui/TestiMonials"
-import Faq from "@/components/ui/Faq"
+import Teams from "@/components/ui/Teams";
+import TestiMonials from "@/components/ui/TestiMonials";
+import Faq from "@/components/ui/Faq";
 import { Laptop } from "lucide-react";
 
 import { FaFigma, FaAppStoreIos } from "react-icons/fa";
-
 
 const page = () => {
   const sections = [
@@ -89,46 +88,41 @@ const page = () => {
           and strategies they need to thrive in a digital-first world, achieving
           measurable results and sustained success.
         </p>
-        <br /><br />
+        <br />
+        <br />
         <div className="grid  grid-cols-2 card space-x-6 space-y-4">
           {sections.map((section, index) => (
             <div className="  text-black bg-white p-4 rounded-3xl" key={index}>
-              <h3 className="text-white bg-black p-4 rounded-3xl ">{section.title}</h3>
+              <h3 className="text-white bg-black p-4 rounded-3xl ">
+                {section.title}
+              </h3>
               <p>{section.content}</p>
             </div>
           ))}
         </div>
 
-
-
         <span className="flex items-center justify-center gap-4 bg-transparent text-white text-4xl max-w-screen">
-  <img
-    className="h-20 w-auto"
-    src="assets/Images/customer-service.png"
-    alt="Get in touch photo"
-  />
-  <span>Get in Touch</span>
-</span>
-<br />
-<span className=" flex items-center justify-center font-bold">
-  Lets Disscuss You need 
-</span>
-<br /><br />
-<div className=" items-center justify-center hidden sm:ml-6 sm:flex sm:items-center">
-           <button className="bg-white  hover:border-1 rounded-4xl  hover:border-white hover:text-white text-black  font-bold py-2 px-4  cursor-pointer hover:bg-[#3498db]">
-           Contacts
-
+          <img
+            className="h-20 w-auto"
+            src="assets/Images/customer-service.png"
+            alt="Get in touch photo"
+          />
+          <span>Get in Touch</span>
+        </span>
+        <br />
+        <span className=" flex items-center justify-center font-bold">
+          Lets Disscuss You need
+        </span>
+        <br />
+        <br />
+        <div className=" items-center justify-center hidden sm:ml-6 sm:flex sm:items-center">
+          <button className="bg-white  hover:border-1 rounded-4xl  hover:border-white hover:text-white text-black  font-bold py-2 px-4  cursor-pointer hover:bg-[#3498db]">
+            Contacts
           </button>
-          </div>
-<Teams/>
-<TestiMonials/>
-<Faq/>
-        
-
-
-
-
-
+        </div>
+        <Teams />
+        <TestiMonials />
+        <Faq />
       </div>
     </>
   );
