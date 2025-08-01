@@ -33,15 +33,17 @@ const page = () => {
   return (
     <>
       {" "}
-      <div className="bg-transparent  max-w-screen text-white text-8xl  mt-32 font-bold ">
+      {/* remove black after using vantajs and use bg-transparent*/}
+      <div className="bg-black  max-w-screen text-white text-8xl mt-64 font-bold ">
         Service that
         <br />
         Sparks Your
         <br />
         Growth
       </div>
-      <h1 className=" mt-44 font-bold  text-white text-5xl ">Our Services </h1>
-      <span className="inline-block w-96 h-full bg-white mt-0"></span>
+      <h1 className=" mt-72 font-bold  text-white text-5xl ">Our Services </h1>
+      <span className="inline-block w-96 h-1 bg-[#3498db]  text-[#3498db]  mt-0"></span>
+      
       <div className="grid grid-cols-3 gap-16 font-bold  text-white ">
         <div className="gap-16 mb-8 card text-white cursor-pointer hover:text-[#3498db] ">
           <Laptop className="inline" /> Web Development
@@ -78,9 +80,11 @@ const page = () => {
           Digital Marketing
         </div>
       </div>
-      <div className=" bg-transparent  max-w-screen text-white  ">
+      {/* remove black after using vantajs and use bg-transparent*/}
+
+      <div className=" bg-black  max-w-screen text-white  ">
         <h1 className="text-white text-4xl font-bold">
-          Enhance your<u> productivity</u> with our expert solutions.
+          Enhance your<span className="underline decoration-[#3294db]"> productivity</span> with our expert solutions.
         </h1>
         <span className="inline-block w-96 h-full bg-white mt-0"></span>
         <p className="font-medium">
@@ -100,8 +104,10 @@ const page = () => {
             </div>
           ))}
         </div>
+      {/* remove black after using vantajs and use bg-transparent*/}
 
-        <span className="flex items-center justify-center gap-4 bg-transparent text-white text-4xl max-w-screen">
+
+        <span className="flex items-center justify-center gap-4 bg-black text-white text-4xl max-w-screen">
           <img
             className="h-20 w-auto"
             src="assets/Images/customer-service.png"

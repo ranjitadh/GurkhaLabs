@@ -6,8 +6,11 @@ import React from "react";
 const About = () => {
   return (
     < div className="bg-black">
-      <div className="">
-        <h1 className="text-4xl font-bold flex justify-center items-center bg-black text-white ">Company</h1>
+      <div className="ml-28 mr-28">
+        <h1 className="text-4xl underline decoration-[#3498db] font-bold flex justify-center items-center bg-black text-white">Company</h1>
+        <br />
+      
+        
         <span className="text-white font-extrabold"> KhatraTech, </span>
         
         
@@ -22,9 +25,9 @@ const About = () => {
         </span>
       </div>
 
-      <h1 className="text-4xl font-bold  flex justify-center items-center bg-black text-white">Vision</h1>
+      <h1 className="text-4xl font-bold  flex justify-center items-center underline decoration-[#3498db]  bg-black text-white">Vision</h1>
 
-      <div className="text-white">
+      <div className="text-white ml-28 mr-28">
         Our vision is to be one of a kind in technology solutions, recognized
         for our creativity, innovation, and unwavering dedication to excellence.
         We strive to empower businesses by providing cutting-edge technology
@@ -32,8 +35,8 @@ const About = () => {
         landscape. We aim to build long-lasting relationships with our clients,
         based on trust, transparency, and mutual success.
       </div>
-      <h1 className="text-4xl font-bold  flex justify-center items-center bg-black text-white ">Mission</h1>
-      <div className=" text-white">
+      <h1 className="text-4xl font-bold  flex justify-center underline decoration-[#3498db]  items-center bg-black text-white ">Mission</h1>
+      <div className=" text-white ml-28 mr-28">
         Our mission is to deliver innovative and customized tech solutions that
         meet the unique needs of each client. We are dedicated to providing
         exceptional service and achieving outstanding results. Our approach

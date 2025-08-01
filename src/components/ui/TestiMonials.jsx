@@ -25,7 +25,7 @@ const TestiMonials = () => {
   return (
     <div className="text-white mt-10 flex flex-col items-center px-4">
       <h1 className="text-4xl font-bold">Testimonials</h1>
-      <div className='bg-white h-6 w-64 inline-block   mb-10 border-2 rounded-4xl"'></div>
+      <div className='bg-[#3498db] text-[#3498db]   h-1 w-64 inline-block   mb-10 border-2 rounded-4xl"'></div>
 
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl w-full">

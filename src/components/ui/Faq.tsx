@@ -57,7 +57,7 @@ const Faq: React.FC = () => {
   return (
     <div className="text-white mt-10 flex flex-col items-center px-4">
       <h1 className="text-4xl font-bold mb-4">FAQ</h1>
-      <div className='bg-white h-6 w-32 inline-block   mb-10 border rounded-4xl"'></div>
+      <div className='bg-[#3498db]   text-[#3498db]  h-1 w-32 inline-block   mb-10 border rounded-4xl"'></div>
        
 
       <div className="w-full max-w-xl space-y-2 ">
