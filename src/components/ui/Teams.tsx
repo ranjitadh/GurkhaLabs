@@ -1,5 +1,7 @@
 import React from 'react'
 import {FaLinkedin,FaFacebook, FaInstagram } from 'react-icons/fa';
+import Image from "next/image"
+
 const Member=[
  
 {
@@ -66,6 +68,8 @@ const Teams = () => {
             className='flex flex-col items-center bg-gray-800 p-6 rounded-lg shadow-md'
           >
             <img
+            height={32}
+            width={32}
               src={member.photo}
               alt={member.name}
               className='w-32 h-32 rounded-full mb-4 object-cover'

@@ -1,55 +1,49 @@
 import React from "react";
-import { Phone,Mail,MapPin } from 'lucide-react';
-import { FaTwitter,FaLinkedin,FaSquareInstagram } from 'react-icons/fa6';
-// import { Mail } from 'lucide-react';
-// import { MapPin } from 'lucide-react';
-// import { Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaTwitter, FaLinkedin, FaSquareInstagram } from 'react-icons/fa6';
+import Image from "next/image";
+
+
 
 
 
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-gray-100 text-center p-6">
-     
-      <div className="container mx-auto">
-       
-       
+  const currentDate = new Date();
 
-        {/* Content Sections */}
-{/* grid grid-cols-1 md:grid-cols-3 gap-8 mb-8  */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
+  return (
+    <footer className="bg-gray-900 text-gray-100 p-6">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div>
-            <br /><br />
-            <h3 className="text-lg font-bold   mb-4">Our Services</h3>
+            <h3 className="text-lg font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
-                
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Web Design
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Web Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   App Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Graphics Design
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Digital Marketing
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   IT Consultation
                 </a>
               </li>
@@ -57,26 +51,25 @@ const Footer = () => {
           </div>
 
           <div>
-             <br /><br />
-            <h3 className="text-lg top-8 font-bold mb-4">About</h3>
+            <h3 className="text-lg font-bold mb-4">About</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Company
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Vision
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Mission
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Team
                 </a>
               </li>
@@ -84,108 +77,88 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg top-8 font-bold mb-4 mt-12">Carrer</h3>
-            <ul>
-
-           
+            <h3 className="text-lg font-bold mb-4">Career</h3>
+            <ul className="space-y-2">
               <li>
-                
-              </li>
-              <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Job Openings
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition-colors">
                   Employee Success
                 </a>
               </li>
-               </ul>
-
+            </ul>
           </div>
 
-          <div className="relative w-full max-w-[1000] ">
-            <img
-              src="/assets/Images/nnneon.svg"
-              alt="neon"
-              className="w-96  h-auto"
+          <div className="relative">
+            <Image
+              src="/assets/Images/square(1).png"
+              height={800}
+              width={300}
+              alt="square"
+              className="w-full max-w-xs h-auto mx-auto lg:mx-0"
             />
-
-            <div className=" br-4 absolute top-8 left-4 p-4 text-white bg-transparent bg-opacity-50 rounded">
-              <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-             <img
-            src="/assets/Images/khatra tech color white.svg"
-            alt="KhatraTech Logo"
-            className="h-20 w-auto mt-4 ml-4"
-          />
-              
-              <p className="mb-2">
-               
-                <a
-                
-                  href="mailto:khatratech@gmail.com"
-                  className="hover:text-gray-400 transition-colors"
-                >
-                       <Mail className="inline mr-1" />
-
+            <div className="absolute top-4 left-4 p-4 text-white bg-transparent bg-opacity-50 rounded">
+              <h3 className="text-lg font-bold mb-2">Contact Us</h3>
+             <Image
+  src="/assets/Images/khatra tech color white.svg"
+  alt="KhatraTech Logo"
+  width={160} 
+  height={64} 
+  className="h-16 w-auto mb-4"
+/>
+              <p className="mb-2 flex items-center">
+                <Mail className="inline mr-2 h-5 w-5" />
+                <a href="mailto:khatratech@gmail.com" className="hover:text-gray-400 transition-colors">
                   admin@admin.com
-                   
                 </a>
               </p>
-              
-              <p className="mb-2">
-                <a
-                  href="tel:+9779705970533"
-                  className="hover:text-gray-400 transition-colors"
-                >
-                    <Phone className="inline mr-1" />
+              <p className="mb-2 flex items-center">
+                <Phone className="inline mr-2 h-5 w-5" />
+                <a href="tel:+9779705970533" className="hover:text-gray-400 transition-colors">
                   +977 9705970533
                 </a>
               </p>
-              <p className="mb-2">
-                  <MapPin className="inline mr-1" />
-                Sankhamul ,Lalitpur, Nepal</p>
-              
+              <p className="mb-2 flex items-center">
+                <MapPin className="inline mr-2 h-5 w-5" />
+                Sankhamul, Lalitpur, Nepal
+              </p>
             </div>
           </div>
         </div>
 
-
-
-        {/* Logo */}
-         <div className="flex-shrink-0 flex justify-center items-center mb-6">
+        <div className="flex justify-center items-center mb-6">
           <img
             src="/assets/Images/khatra tech color white.svg"
             alt="KhatraTech Logo"
-            className="h-32 w-auto"
+            className="h-24 w-auto"
           />
-        </div>
+        </div>      
 
-
-
-
-
-
-        <div className="border-t border-gray-700 pt-4">
-          <div className="mb-4">
-            <a href="#" className="text-gray-100 hover:text-gray-400 mx-2">
+        <div className="border-t border-gray-700 pt-4 text-center">
+          <div className="mb-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+            <a href="#" className="text-gray-100 hover:text-gray-400 transition-colors">
               Privacy Policy
             </a>
-            <br />
-            <a href="#" className="text-gray-100 hover:text-gray-400 mx-2">
+            <a href="#" className="text-gray-100 hover:text-gray-400 transition-colors">
               Terms of Service
             </a>
           </div>
-          <p className="mb-0">© 2025 KhatraTech. All rights reserved.</p>
+          <div className="flex justify-center space-x-4 mb-4">
+            <a href="https://x.com/KhatraTech" className="text-gray-100 hover:text-gray-400 transition-colors">
+              <FaTwitter className="h-6 w-6" />
+            </a>
+            <a href="https://np.linkedin.com/company/khatra-tech" className="text-gray-100 hover:text-gray-400 transition-colors">
+              <FaLinkedin className="h-6 w-6" />
+            </a>
+            <a href="https://www.instagram.com/khatratech/" className="text-gray-100 hover:text-gray-400 transition-colors">
+              <FaSquareInstagram className="h-6 w-6" />
+            </a>
+          </div>
+          <p className="mb-0">© {currentDate.getFullYear()} KhatraTech. All rights reserved.</p>
         </div>
-        <div className="cursor-pointer space-x-4">
-
-      
-     <FaTwitter  className="inline mr-1" />
-<FaLinkedin  className="inline mr-1" />
-<FaSquareInstagram  className="inline mr-1" />
-     </div>
       </div>
     </footer>
   );

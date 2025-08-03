@@ -8,6 +8,10 @@
       theme: {
         extend: {
 
+             colors: {
+        foreground: "hsl(var(--foreground))",
+     },
+
           animation: {
         'fade-in-down': 'fadeInDown 0.7s ease-out',
         'fade-in-up': 'fadeInUp 0.7s ease-out',
@@ -34,7 +38,7 @@
 
       },
           
-          colors: {
+          color: {
             primary: {
              
               light: '#3498db',  

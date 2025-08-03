@@ -22,6 +22,6 @@
       "@/*": ["./src/*", "./src/vanta-net.d.ts" ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui/TestiMonials.jsx"],
   "exclude": ["node_modules"]
 }

@@ -2,6 +2,9 @@ import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Faq from "@/components/ui/Faq";
 import MapEmbed from "@/components/ui/MapEmbed";
+import {
+  animate
+} from 'animejs';
 
 const Contact = () => {
   return (

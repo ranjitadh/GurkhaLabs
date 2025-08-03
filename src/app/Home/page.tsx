@@ -3,8 +3,10 @@ import Teams from "@/components/ui/Teams";
 import TestiMonials from "@/components/ui/TestiMonials";
 import Faq from "@/components/ui/Faq";
 import { Laptop } from "lucide-react";
+import Image from "next/image"
 
 import { FaFigma, FaAppStoreIos } from "react-icons/fa";
+
 
 const page = () => {
   const sections = [
@@ -33,6 +35,7 @@ const page = () => {
   return (
     <>
       {" "}
+   
       {/* remove black after using vantajs and use bg-transparent*/}
       <div className="bg-black  max-w-screen text-white text-8xl mt-64 font-bold ">
         Service that
@@ -53,27 +56,33 @@ const page = () => {
           Web Design
         </div>
         <div className="cursor-pointer hover:text-[#3498db] ">
-          <img
-            className="inline h-5"
+          <Image
             src="/assets/Images/Graphics_design.png"
+            width={20}
+            height={50}
             alt=""
-          />{" "}
+            className="inline h-5"
+            />{" "}
           Graphics Design
         </div>
         <div className="cursor-pointer hover:text-[#3498db] ">
           <FaAppStoreIos className="inline cursor-pointer" /> App Development
         </div>
         <div className="cursor-pointer hover:text-[#3498db] ">
-          <img
+          <Image
             className="inline h-5"
+            width={20}
+            height={50}
             src="/assets/Images/technical-support.png"
             alt=""
           />{" "}
           It Consultant
         </div>
         <div className="gap-4 s  card text-white cursor-pointer hover:text-[#3498db] ">
-          <img
+          <Image
             className="inline h-5"
+            width={20}
+            height={50}
             src="/assets/Images/technology.png"
             alt=""
           />{" "}
@@ -104,15 +113,17 @@ const page = () => {
             </div>
           ))}
         </div>
-      {/* remove black after using vantajs and use bg-transparent*/}
+      {/* remove black after using vantajs and use bg-transparent */}
 
 
         <span className="flex items-center justify-center gap-4 bg-black text-white text-4xl max-w-screen">
-          <img
-            className="h-20 w-auto"
-            src="assets/Images/customer-service.png"
-            alt="Get in touch photo"
-          />
+         
+         <Image
+         src="/assets/Images/customer-service.png"
+         height={50}
+         width={50}
+         alt="customer service"
+         />
           <span>Get in Touch</span>
         </span>
         <br />
