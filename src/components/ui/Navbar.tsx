@@ -5,7 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
-import clsx from "clsx"; // Optional but useful for conditionally joining classes
+import clsx from "clsx"; 
+import SlideArrowButton from "@/components/animata/button/side-arrow-button";
+
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,9 +57,10 @@ const Navbar: React.FC = () => {
           {/* Desktop Button */}
           <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <button className="ml-6 border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300">
-                Get in Touch
-              </button>
+              <SlideArrowButton
+  primaryColor="#000000"
+  text="Get in Touch"
+/>
             </Link>
           </div>
 

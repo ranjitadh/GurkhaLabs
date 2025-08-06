@@ -4,6 +4,7 @@ import ServiceBox from "@/components/ui/ServiceBox";
 import Works from "@/components/ui/Works";
 import Marquee from  "@/components/ui/WorkMarquee"
 import Workflow from "@/components/ui/flow"
+import SplitText from "@/components/animata/text/split-text";
 
 
 
@@ -13,10 +14,19 @@ const Page = () => {
    
       <div className="grid grid-cols-1 md:grid-cols-2 bg-black text-white">
         <div className="flex flex-col justify-center p-6 sm:p-12 md:p-20 lg:p-28">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Everything you <br />
-            need in one <br />
-            place.
+          <h1 className="text-4xl    md:text-6xl lg:text-4xl font-bold leading-tight">
+             <br />
+      <SplitText  text="Everything " />
+      <SplitText  text="you " />
+    
+
+
+           <SplitText text="need " />
+           <SplitText text="in " />
+           <SplitText text="one " />
+           <SplitText text="place "/>
+            
+           
           </h1>
           <div className="h-1 w-48 sm:w-64 bg-[#3498db] mt-6 rounded-full" />
         </div>

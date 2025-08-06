@@ -89,26 +89,35 @@ const Footer = () => {
                   Employee Success
                 </a>
               </li>
+              <li>
+                <a 
+                href="#" className="hover:text-gray-400 transition-colors">
+                  Case Study
+                  
+
+
+                </a>
+              </li>
             </ul>
           </div>
 
           <div className="relative">
-            <Image
+            {/* <Image
               src="/assets/Images/square(1).png"
               height={800}
               width={300}
               alt="square"
               className="w-full max-w-xs h-auto mx-auto lg:mx-0"
-            />
-            <div className="absolute top-4 left-4 p-4 text-white bg-transparent bg-opacity-50 rounded">
-              <h3 className="text-lg font-bold mb-2">Contact Us</h3>
-             <Image
+            /> */}
+            <div className="absolute top-0 left-4  text-white bg-transparent bg-opacity-50  ">
+              <h3 className="text-lg font-bold mb-2 ">Contact Us</h3>
+             {/* <Image
   src="/assets/Images/khatra tech color white.svg"
   alt="KhatraTech Logo"
   width={160} 
   height={64} 
   className="h-16 w-auto mb-4"
-/>
+/> */}
               <p className="mb-2 flex items-center">
                 <Mail className="inline mr-2 h-5 w-5" />
                 <a href="mailto:khatratech@gmail.com" className="hover:text-gray-400 transition-colors">
@@ -129,16 +138,23 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center mb-6">
-          <img
-            src="/assets/Images/khatra tech color white.svg"
-            alt="KhatraTech Logo"
-            className="h-24 w-auto"
-          />
-        </div>      
+         <div className="flex justify-center items-center">
 
-        <div className="border-t border-gray-700 pt-4 text-center">
+         
+         <Image
+            src="/assets/Images/khatra tech color white.svg"
+            height={150}
+            width={150}
+            alt="KhatraTech Logo"
+            className="flex justify-center items-center  "
+          />
+           </div>
+           
+
+        <div className="border-t border-gray-700 pt-4 text-center grid grid-cols-1 justify-center items-center">
+          
           <div className="mb-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+            
             <a href="#" className="text-gray-100 hover:text-gray-400 transition-colors">
               Privacy Policy
             </a>
@@ -157,7 +173,15 @@ const Footer = () => {
               <FaSquareInstagram className="h-6 w-6" />
             </a>
           </div>
+          
+          
+          
           <p className="mb-0">© {currentDate.getFullYear()} KhatraTech. All rights reserved.</p>
+
+
+         
+        
+        
         </div>
       </div>
     </footer>

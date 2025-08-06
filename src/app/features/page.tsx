@@ -14,6 +14,7 @@ import { GiProcessor } from "react-icons/gi";
 import Link from "next/link";
 import React from "react";
 import { ArrowBigRightDash } from "lucide-react";
+import SwipeButton from "@/components/animata/button/swipe-button";
 
 const page = () => {
   return (
@@ -27,17 +28,23 @@ const page = () => {
           <br />
           with us.
           <div className="mt-8">
-            <a
-              href="/contact"
-              className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-6 rounded-3xl text-2xl"
-            >
-              Contact Us
-            </a>
+          
+
+<a href="/contact">
+            <SwipeButton
+            
+  className=" cursor-pointer"
+  firstClass="bg-black text-white border border-white rounded"
+  firstText="Contact us"
+  secondClass="bg-[#3298db] text-white"
+  secondText="Contact us"
+/>
+</a>
           </div>
         </div>
         <div className="flex justify-center items-center py-10 px-4">
           <Image
-            src="/assets/Images/features.png"
+            src="/assets/Images/feature.jpg"
             width={400}
             height={400}
             alt="feature"
@@ -52,9 +59,9 @@ const page = () => {
       <div className="flex flex-col-reverse md:flex-row justify-center items-center py-16 px-6 bg-black text-white">
         <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
           <Image
-            src="/assets/Images/aggregate.png"
-            width={350}
-            height={350}
+            src="/assets/Images/Master-Data-Management.png"
+            width={500}
+            height={500}
             alt="feature"
             className="transition-all duration-300 ease-in-out hover:scale-105"
           />
@@ -97,9 +104,9 @@ const page = () => {
         </div>
         <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
           <Image
-            src="/assets/Images/application.png"
-            width={350}
-            height={350}
+            src="/assets/Images/Revolut.jpg"
+            width={500}
+            height={500}
             alt="feature"
             className="transition-all duration-300 ease-in-out hover:scale-105"
           />
@@ -110,9 +117,9 @@ const page = () => {
       <div className="flex flex-col md:flex-row justify-center items-center py-16 px-6 bg-black text-white">
         <div className="w-full md:w-1/2 flex justify-center">
           <Image
-            src="/assets/Images/bullhorn.png"
-            width={350}
-            height={350}
+            src="/assets/Images/B2B-digital-marketing.png"
+            width={500}
+            height={500}
             alt="feature"
             className="transition-all duration-300 ease-in-out hover:scale-105"
           />

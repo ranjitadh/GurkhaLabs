@@ -1,3 +1,4 @@
+import SwipeButton from "@/components/animata/button/swipe-button";
 import Faq from "@/components/ui/Faq";
 import Teams from "@/components/ui/Teams";
 import TestiMonials from "@/components/ui/TestiMonials";
@@ -55,9 +56,16 @@ const About = () => {
 <p className="text-2xl  font-medium flex justify-center items-start bg-black text-white rounded-b-4xl">Get in touch with our team, We are always happy to help you.</p>
 
  <div className="flex justify-end">
-  <a href="/contact" className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 cursor-pointer rounded-4xl text-5xl w-auto">
-    Contact Us
-  </a>
+ <a href="/contact">
+             <SwipeButton
+             
+   className=" cursor-pointer"
+   firstClass="bg-black text-white border border-white rounded"
+   firstText="Contact us"
+   secondClass="bg-[#3298db] text-white"
+   secondText="Contact us"
+ />
+ </a>
 
 </div>
 

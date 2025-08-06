@@ -16,7 +16,7 @@ const services: Service[] = [
     title: "Website Development",
     subtitle: "Web Development",
     description: "We build responsive, user-friendly websites tailored to your brand and audience.",
-    image: "https://images.unsplash.com/photo-1678690832311-bb6e361989ca?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rotate: "x",
   },
   {
@@ -44,7 +44,7 @@ const services: Service[] = [
     title: "Web Design",
     subtitle: "Web Designer",
     description: "Crafting visually stunning, user-friendly websites that engage and convert visitors.",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1678690832311-bb6e361989ca?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
     rotate: "x",
   },
 ]
@@ -70,8 +70,9 @@ const ServiceBox: React.FC = () => {
           return (
             <div
               key={idx}
-              className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 transition-all duration-700 animate-(--animate-fade-in-up) ${delayClass}`}
+              className={`flex flex-col md:flex-row ${!isEven ? "md:flex-row-reverse" : ""} items-center gap-8 md:gap-12 transition-all duration-700 animate-(--animate-fade-in-up) ${delayClass}`}
             >
+              {/* Image/FlipCard */}
               <div className="w-full md:w-1/2 flex justify-center">
                 <FlipCard
                   image={svc.image}
@@ -83,6 +84,7 @@ const ServiceBox: React.FC = () => {
                 />
               </div>
 
+              {/* Text Content */}
               <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
                 <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold text-[#3498db] mb-4 ${slideAnim} transition duration-500`}>
                   {svc.title}

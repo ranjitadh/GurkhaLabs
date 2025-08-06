@@ -6,10 +6,14 @@ export default function Home(
   return (
     <> 
 
-    <div className=" text-black font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+   <div className="flex flex-col min-h-screen text-black font-sans p-8 pb-20 sm:p-20">
+  <div className="h-[20px]"></div>
+  <div className="flex-1">
+    <Dashboard />
+  </div>
+  <div className="h-[20px]"></div>
+</div>
 
-<Dashboard/>
-    </div>
     
     </>
   );

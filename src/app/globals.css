@@ -21,6 +21,7 @@
   --animate-slide-in-left: slideInLeft 0.5s ease-out;
   --animate-slide-in-right: slideInRight 0.5s ease-out;
     --trail: "trail var(--duration) linear infinite",
+   /* --flip-words: "flip-words 8s infinite", */
 
   /* define keyframes */
   @keyframes fadeInDown {
@@ -39,6 +40,21 @@
     0% { opacity: 0; transform: translateX(20px); }
     100% { opacity: 1; transform: translateX(0); }
   }
+
+ @keyframes flip-words : {
+     
+          "10%": { transform: "translateY(-112%)" },
+          "25%": { transform: "translateY(-100%)" },
+          "35%": { transform: "translateY(-212%)" },
+          "50%": { transform: "translateY(-200%)" },
+          "60%": { transform: "translateY(-312%)" },
+          "75%": { transform: "translateY(-300%)" },
+          "85%": { transform: "translateY(-412%)" },
+          "100%": { transform: "translateY(-400%)" },
+        },
+
+
+
 }
 
 
