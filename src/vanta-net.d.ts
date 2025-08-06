@@ -17,7 +17,7 @@ declare module "vanta/dist/vanta.net.min" {
     minHeight?: number;
     minWidth?: number;
     showDots?: boolean;
-    [key: string]: string;
+    [key: string]: unknown;
   }
   interface VantaEffect {
     setOptions(options: Partial<NetOptions>): void;
