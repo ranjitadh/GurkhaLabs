@@ -1,5 +1,5 @@
-declare module 'vanta/dist/vanta.net.min' {
-  import * as THREE from 'three';
+declare module "vanta/dist/vanta.net.min" {
+  import * as THREE from "three";
   interface NetOptions {
     el: HTMLElement | string;
     THREE?: typeof THREE;
@@ -17,7 +17,7 @@ declare module 'vanta/dist/vanta.net.min' {
     minHeight?: number;
     minWidth?: number;
     showDots?: boolean;
-    [key: string]: any;
+    [key: string]: string;
   }
   interface VantaEffect {
     setOptions(options: Partial<NetOptions>): void;

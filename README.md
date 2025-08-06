@@ -1,36 +1,218 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 KhatraTech Website – Redesign 2025
 
-## Getting Started
+The official source code for the redesigned [KhatraTech](https://khatratech.com) website. Built with the **Next.js App Router**, styled using **Tailwind CSS**, written in **TypeScript**, and backed by **PostgreSQL** with **Prisma ORM**. Implements **JWT-based authentication**, responsive UI, modern design principles, and SEO best practices.
 
-First, run the development server:
+---
+
+## 📌 Tech Stack
+
+| Layer         | Technology                         |
+|---------------|-------------------------------------|
+| Framework     | [Next.js (App Router)](https://nextjs.org/docs/app) |
+| Styling       | [Tailwind CSS](https://tailwindcss.com) |
+| Language      | TypeScript                         |
+| Database      | PostgreSQL                         |
+| ORM           | [Prisma](https://www.prisma.io)    |
+| Auth          | JWT (JSON Web Token)               |
+| Hosting       | VPS / Docker / Vercel              |
+| Lint/Format   | ESLint, Prettier                   |
+| SEO           | Metadata API, Open Graph, Sitemap  |
+
+---
+
+## 🗂️ Folder Structure (App Router)
+
+```
+
+.
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx                # Homepage
+│   ├── about/page.tsx
+│   ├── services/page.tsx
+│   ├── contact/page.tsx
+│   ├── blog/page.tsx
+│   └── dashboard/(auth)/...    # Protected routes
+├── components/                 # Reusable UI components
+├── lib/                        # Utility functions (e.g., JWT, db)
+├── prisma/
+│   ├── schema.prisma
+│   └── seed.ts
+├── public/                     # Static files
+├── styles/                     # Tailwind config, globals
+├── .env.example
+├── next.config.js
+└── README.md
+
+````
+
+---
+
+## 🧰 Getting Started
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/Khatra-Tech-Pvt-Ltd/khatratech.git
+cd khatratech
+npm install
+````
+
+### 2. Environment Variables
+
+Create a `.env` file based on `.env.example`:
+
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/khatratech
+JWT_SECRET=your-strong-secret
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+---
+
+### 3. Prisma & Database
+
+```bash
+npx prisma migrate dev --name init
+npx prisma generate
+npx prisma db seed
+```
+
+---
+
+### 4. Run the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Access the site at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Authentication – JWT Based
 
-## Learn More
+* Secure login API issues **JWT access token**.
+* Protected routes (e.g. dashboard) check token validity via middleware.
+* Token is stored in `Authorization` header (or HTTP-only cookie for production).
+* JWT signing key is defined in `.env` as `JWT_SECRET`.
 
-To learn more about Next.js, take a look at the following resources:
+🔧 Located in:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* `lib/auth.ts` → token creation & verification
+* `middleware.ts` → protect server routes
+* `api/auth/login/route.ts` → authentication handler
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎨 Styling & UI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Fully responsive, mobile-first layout.
+* Custom `tailwind.config.ts` for branding.
+* Dark mode supported via Tailwind’s `media` strategy.
+* Componentized structure with shared UI like `<Navbar />`, `<Footer />`, `<HeroSection />`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧠 SEO Strategy
+
+**Implemented using Next.js App Router metadata API.**
+
+### 1. Dynamic Metadata
+
+```ts
+// app/page.tsx
+export const metadata = {
+  title: "KhatraTech – Transform Tech, Inspiring Solutions",
+  description: "We provide web, app, branding & IT consulting services in Nepal.",
+  openGraph: {
+    title: "KhatraTech",
+    images: ["/og-image.jpg"],
+  },
+};
+```
+
+### 2. Structured Data (JSON-LD)
+
+```tsx
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "KhatraTech",
+  url: "https://khatratech.com",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+977-9705970533",
+    contactType: "Customer Service",
+  },
+})}
+</script>
+```
+
+### 3. Other SEO Optimizations
+
+* Clean URLs (e.g. `/services/web-development`)
+* Sitemap generated via `next-sitemap`
+* Canonical links set in metadata
+* Image optimization via `<Image />`
+* Lazy loading & alt attributes for all images
+* Robots.txt in `public/`
+* Performance improvements with SSR/SSG
+* Google Analytics & Search Console integrated
+
+---
+
+## 📜 Scripts
+
+```bash
+npm run dev             # Start dev server
+npm run build           # Build for production
+npm run start           # Start production server
+npx prisma studio       # Visual DB browser
+npm run lint            # Run ESLint
+npm run format          # Prettier format
+```
+
+---
+
+## 🚀 Deployment
+
+**Recommended: Self-hosting**
+
+* Connect GitHub repo to CI/CD pipeline for automatic deployment
+* Add environment variables
+* Auto-deploy on push to `main`
+* Use Docker for containerization
+* Deploy on VPS or cloud provider
+
+Alternatively, use Vercel for deployment.
+
+---
+
+## 🤝 Contributing
+
+* Fork the repo, create a branch, open PR
+* Use conventional commits
+* Run `npm run lint && npm run format` before pushing
+* Add tests if applicable
+
+---
+
+## 📬 Contact
+
+📧 Email: [info@khatratech.com](mailto:info@khatratech.com)
+
+🌐 Website: [https://khatratech.com](https://khatratech.com)
+
+📞 Phone: +977-9705970533
+
+🏢 Address: Sankhamul Planning Cross 6,Lalitpur, Bagmati Province, Nepal
+
+---
+
+## ⚖️ License
+
+This project is proprietary to **KhatraTech Pvt. Ltd.**. Redistribution or reuse without written permission is prohibited.
+
+---

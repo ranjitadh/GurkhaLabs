@@ -3,8 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import NET from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
 import { VantaNetProps } from '@/types';
-import Navbar from './Navbar';
-import Footer from './Footer';
+
 
 const VantaNetBackground: React.FC<VantaNetProps> = ({ children, options = {} }) => {
   const containerRef = useRef<HTMLDivElement>(null);

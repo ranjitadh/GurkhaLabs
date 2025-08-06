@@ -2,9 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Faq from "@/components/ui/Faq";
 import MapEmbed from "@/components/ui/MapEmbed";
-import {
-  animate
-} from 'animejs';
+
 
 const Contact = () => {
   return (
@@ -15,7 +13,7 @@ const Contact = () => {
 
       <p className="text-center max-w-xl text-base sm:text-lg">
         Our team is always here to help. Send us a message or directly call us
-        and we'll get back to you shortly.
+        and we&apos;ll get back to you shortly.
       </p>
 
       <div>
@@ -122,35 +120,23 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        
       </div>
 
       <div className="flex flex-col items-center justify-center text-white font-bold bg-black sm:p-8">
-          <h1 className=" text-2xl sm:text-3xl md:text-4xl text-white bg-transparent">
-            Our Location
-          </h1>
-          <br />
-          <p className="text-xl font-medium text-white">Visit us at our office in Sankhamul, Lalitpur</p>
-        </div>
+        <h1 className=" text-2xl sm:text-3xl md:text-4xl text-white bg-transparent">
+          Our Location
+        </h1>
+        <br />
+        <p className="text-xl font-medium text-white">
+          Visit us at our office in Sankhamul, Lalitpur
+        </p>
+      </div>
 
-        {/* Map */}
+      {/* Map */}
 
-        <MapEmbed location="27.681649933434066, 85.3285974448767"/>
+      <MapEmbed location="27.681649933434066, 85.3285974448767" />
 
-     
-
-<Faq/>
-
-
-
-
-
-
-
-
-
-
+      <Faq />
     </div>
   );
 };

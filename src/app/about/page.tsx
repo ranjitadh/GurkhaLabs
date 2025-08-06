@@ -6,27 +6,31 @@ import React from "react";
 
 const About = () => {
   return (
-    < div className="bg-black">
+    <div className="bg-black">
       <div className="ml-28 mr-28">
-        <h1 className="text-4xl underline decoration-[#3498db] font-bold flex justify-center items-center bg-black text-white">Company</h1>
+        <h1 className="text-4xl underline decoration-[#3498db] font-bold flex justify-center items-center bg-black text-white">
+          Company
+        </h1>
         <br />
-      
-        
+
         <span className="text-white font-extrabold"> KhatraTech, </span>
-        
-        
-        <span className="text-white "> where innovation meets excellence. Founded
-        with a passion for technology and a commitment to quality. We specialize
-        in providing best and comprehensive tech solutions to businesses of all
-        sizes. Our team of experienced professionals excels in web design, web
-        development, app development, digital marketing, IT consultation, and
-        graphics design. We pride ourselves on delivering top-notch services
-        that drive growth, enhance efficiency, and create lasting value for our
-        clients.
+
+        <span className="text-white ">
+          {" "}
+          where innovation meets excellence. Founded with a passion for
+          technology and a commitment to quality. We specialize in providing
+          best and comprehensive tech solutions to businesses of all sizes. Our
+          team of experienced professionals excels in web design, web
+          development, app development, digital marketing, IT consultation, and
+          graphics design. We pride ourselves on delivering top-notch services
+          that drive growth, enhance efficiency, and create lasting value for
+          our clients.
         </span>
       </div>
 
-      <h1 className="text-4xl font-bold  flex justify-center items-center underline decoration-[#3498db]  bg-black text-white">Vision</h1>
+      <h1 className="text-4xl font-bold  flex justify-center items-center underline decoration-[#3498db]  bg-black text-white">
+        Vision
+      </h1>
 
       <div className="text-white ml-28 mr-28">
         Our vision is to be one of a kind in technology solutions, recognized
@@ -36,45 +40,41 @@ const About = () => {
         landscape. We aim to build long-lasting relationships with our clients,
         based on trust, transparency, and mutual success.
       </div>
-      <h1 className="text-4xl font-bold  flex justify-center underline decoration-[#3498db]  items-center bg-black text-white ">Mission</h1>
+      <h1 className="text-4xl font-bold  flex justify-center underline decoration-[#3498db]  items-center bg-black text-white ">
+        Mission
+      </h1>
       <div className=" text-white ml-28 mr-28">
         Our mission is to deliver innovative and customized tech solutions that
         meet the unique needs of each client. We are dedicated to providing
         exceptional service and achieving outstanding results. Our approach
         combines technical expertise, creativity, and a deep understanding of
-        our clients' goals. By staying ahead of industry trends and continually
+        our clients&apos;goals. By staying ahead of industry trends and continually
         improving our skills, we ensure our clients receive the best possible
         solutions to achieve their business objectives. At KhatraTech, we are
         committed to making technology work for you.
       </div>
-      <Teams/>
-      <TestiMonials/>
-      <Faq/>
-      <div className="bg-black text-white rounded-t-4xl flex justify-center text-5xl items-center max-w-screen font-bold h-40">Not sure which service suits you?
-<br />
- </div>
-<p className="text-2xl  font-medium flex justify-center items-start bg-black text-white rounded-b-4xl">Get in touch with our team, We are always happy to help you.</p>
+      <Teams />
+      <TestiMonials />
+      <Faq />
+      <div className="bg-black text-white rounded-t-4xl flex justify-center text-5xl items-center max-w-screen font-bold h-40">
+        Not sure which service suits you?
+        <br />
+      </div>
+      <p className="text-2xl  font-medium flex justify-center items-start bg-black text-white rounded-b-4xl">
+        Get in touch with our team, We are always happy to help you.
+      </p>
 
- <div className="flex justify-end">
- <a href="/contact">
-             <SwipeButton
-             
-   className=" cursor-pointer"
-   firstClass="bg-black text-white border border-white rounded"
-   firstText="Contact us"
-   secondClass="bg-[#3298db] text-white"
-   secondText="Contact us"
- />
- </a>
-
-</div>
-
-     
-
-
-
-
-
+      <div className="flex justify-end">
+        <a href="/contact">
+          <SwipeButton
+            className=" cursor-pointer"
+            firstClass="bg-black text-white border border-white rounded"
+            firstText="Contact us"
+            secondClass="bg-[#3298db] text-white"
+            secondText="Contact us"
+          />
+        </a>
+      </div>
     </div>
   );
 };
