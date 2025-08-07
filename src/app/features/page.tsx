@@ -31,14 +31,13 @@ const page = () => {
           
 
 <a href="/contact">
-            <SwipeButton
-            
-  className=" cursor-pointer"
-  firstClass="bg-black text-white border border-white rounded"
-  firstText="Contact us"
-  secondClass="bg-[#3298db] text-white"
-  secondText="Contact us"
-/>
+          <SwipeButton
+                     className=" cursor-pointer"
+                     firstClass="bg-white text-black rounded"
+                     firstText="Contact us"
+                     secondClass="bg-black text-white border border-white"
+                     secondText="Contact us"
+                   />
 </a>
           </div>
         </div>
