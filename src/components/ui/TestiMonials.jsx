@@ -25,7 +25,7 @@ const testimonials = [
 const TestiMonials = () => {
   return (
     <div className="text-white mt-10 flex flex-col items-center px-4">
-      <h1 className="text-4xl mb-10 font-bold underline decoration-primary tracking-tight">Testimonials</h1>
+      <h1 className="text-4xl mb-10 font-bold underline decoration-[#3498db] tracking-tight">Testimonials</h1>
      
 
       <Marquee speed={80} gradient={true} gradientColor="black" pauseOnHover={false} className="w-full">

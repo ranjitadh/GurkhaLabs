@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Teams from "@/components/ui/Teams";
 import TestiMonials from "@/components/ui/TestiMonials";
@@ -7,6 +9,8 @@ import Image from "next/image";
 import FlipCard from "@/components/animata/container/Flipcard";
 import { FaFigma, FaAppStoreIos } from "react-icons/fa";
 import SwipeButton from "@/components/animata/button/swipe-button";
+import JumpingTextInstagram from "@/components/animata/text/staggered-letter";
+import { motion } from "framer-motion";
 
 const page = () => {
   const sections = [
@@ -47,67 +51,98 @@ const page = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-black flex flex-col justify-center items-center text-center px-4 py-16 text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-        <p>Service that</p>
-        <p>Sparks Your</p>
-        <p>Growth</p>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-black flex flex-col justify-center items-center text-center px-4 py-16 text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+      >
+        <JumpingTextInstagram text="Service " />
+        <JumpingTextInstagram text="that " />
+        <JumpingTextInstagram text="Sparks Your" />
+        <JumpingTextInstagram text="Growth" />
+      </motion.div>
 
       {/* Our Services */}
-      <h1 className="mt-20 text-center text-white text-3xl md:text-5xl font-bold underline decoration-4 decoration-primary">
+      <motion.h1
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="mt-20 text-center text-white text-3xl md:text-5xl font-bold underline decoration-4 decoration-[#3498db]"
+      >
         Our Services
-      </h1>
+      </motion.h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-12 text-white font-semibold">
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]">
-          <Laptop className="h-6 w-6" />
-          <span>Web Development</span>
-        </div>
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]">
-          <FaFigma className="h-6 w-6" />
-          <span>Web Design</span>
-        </div>
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]">
-          <Image
-            src="/assets/Images/Graphics_design.png"
-            width={24}
-            height={24}
-            alt="Graphics Design"
-          />
-          <span>Graphics Design</span>
-        </div>
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]">
-          <FaAppStoreIos className="h-6 w-6" />
-          <span>App Development</span>
-        </div>
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]">
-          <Image
-            src="/assets/Images/technical-support.png"
-            width={24}
-            height={24}
-            alt="IT Consultant"
-          />
-          <span>IT Consultant</span>
-        </div>
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]">
-          <Image
-            src="/assets/Images/technology.png"
-            width={24}
-            height={24}
-            alt="Digital Marketing"
-          />
-          <span>Digital Marketing</span>
-        </div>
-      </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        transition={{ staggerChildren: 0.1 }}
+        variants={{
+          visible: { transition: { staggerChildren: 0.1 } },
+        }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-12 text-white font-semibold"
+      >
+        {[
+          { icon: <Laptop className="h-6 w-6" />, label: "Web Development" },
+          { icon: <FaFigma className="h-6 w-6" />, label: "Web Design" },
+          {
+            icon: (
+              <Image
+                src="/assets/Images/Graphics_design.png"
+                width={24}
+                height={24}
+                alt="Graphics Design"
+              />
+            ),
+            label: "Graphics Design",
+          },
+          { icon: <FaAppStoreIos className="h-6 w-6" />, label: "App Development" },
+          {
+            icon: (
+              <Image
+                src="/assets/Images/technical-support.png"
+                width={24}
+                height={24}
+                alt="IT Consultant"
+              />
+            ),
+            label: "IT Consultant",
+          },
+          {
+            icon: (
+              <Image
+                src="/assets/Images/technology.png"
+                width={24}
+                height={24}
+                alt="Digital Marketing"
+              />
+            ),
+            label: "Digital Marketing",
+          },
+        ].map((service, index) => (
+          <motion.div
+            key={index}
+            className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            {service.icon}
+            <span>{service.label}</span>
+          </motion.div>
+        ))}
+      </motion.div>
 
       {/* Enhance Productivity Section */}
-      <div className="bg-black text-white px-4 py-16">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="bg-black text-white px-4 py-16"
+      >
         <h1 className="text-2xl sm:text-4xl font-bold text-center mb-6">
           Enhance your
-          <span className="underline decoration-[#3294db]">
-            {" "}
-            productivity{" "}
-          </span>
+          <span className="underline decoration-[#3294db]"> productivity </span>
           with our expert solutions.
         </h1>
 
@@ -120,20 +155,31 @@ const page = () => {
         {/* Flip Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
           {sections.map((section, index) => (
-            <FlipCard
+            <motion.div
               key={index}
-              image={section.image}
-              title={section.title}
-              subtitle={section.subtitle}
-              description={section.content}
-              rotate="y"
-              className="h-64 w-full max-w-md mx-auto"
-            />
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <FlipCard
+                image={section.image}
+                title={section.title}
+                subtitle={section.subtitle}
+                description={section.content}
+                rotate="y"
+                className="h-64 w-full max-w-md mx-auto"
+              />
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mt-20"
+        >
           <div className="flex justify-center items-center text-2xl sm:text-4xl gap-4">
             <Image
               src="/assets/Images/customer-service.png"
@@ -148,27 +194,44 @@ const page = () => {
           <div className="mt-6 flex justify-center">
             <a href="/contact">
               <SwipeButton
-                         className=" cursor-pointer"
-                         firstClass="bg-white text-black rounded"
-                         firstText="Contact us"
-                         secondClass="bg-black text-white border border-white"
-                         secondText="Contact us"
-                       />
+                className="cursor-pointer"
+                firstClass="bg-white text-black rounded"
+                firstText="Contact us"
+                secondClass="bg-black text-white border border-white"
+                secondText="Contact us"
+              />
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Additional Sections */}
-        <div className="mt-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mt-16"
+        >
           <Teams />
-        </div>
-        <div className="mt-16">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-16"
+        >
           <TestiMonials />
-        </div>
-        <div className="mt-16">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16"
+        >
           <Faq />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };

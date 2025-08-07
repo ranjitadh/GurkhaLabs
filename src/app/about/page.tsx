@@ -69,11 +69,11 @@ const About = () => {
         <p className="text-2xl font-medium">
           Get in touch with our team, We are always happy to help you.
         </p>
-        <div className="mt-8 flex justify-center animate-bounce">
+        <div className="mt-8 flex justify-center  animate-pulse">
           <a href="/contact">
             <SwipeButton
               className="cursor-pointer"
-              firstClass="bg-black text-white border border-white rounded"
+              firstClass="bg-black text-white border border-white rounded  animate-pulse"
               firstText="Contact us"
               secondClass="bg-[#3298db] text-white"
               secondText="Contact us"

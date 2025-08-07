@@ -2,8 +2,6 @@
 import React, { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-
-
 const faqs = [
   {
     question: "What services do you offer?",
@@ -44,22 +42,24 @@ const Faq: React.FC = () => {
 
   return (
     <section className="text-white mt-12 flex flex-col items-center px-4 sm:px-6 lg:px-8">
-      <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center">FAQ</h1>
-      <div className="bg-[#3498db] h-1 w-24 sm:w-32 mb-8 rounded-full" />
+      <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-center">
+        FAQ
+      </h1>
+      <div className="bg-[#3498db] h-1 w-20 sm:w-28 md:w-32 mb-8 rounded-full" />
 
-      <div className="w-full max-w-2xl space-y-4">
+      <div className="w-full max-w-md sm:max-w-xl md:max-w-2xl space-y-4">
         {faqs.map((faq, index) => (
           <div key={index}>
             <button
               onClick={() => toggleAnswer(index)}
-              className="w-full text-left text-base sm:text-lg font-semibold bg-white text-black px-4 py-3 shadow flex justify-between items-center border rounded-xl"
+              className="w-full text-left text-sm sm:text-base md:text-lg font-semibold bg-white text-black px-4 py-3 shadow flex justify-between items-center border rounded-xl"
             >
-              <span>{faq.question}</span>
+              <span className="flex-1 pr-4">{faq.question}</span>
               <ChevronDown
                 className={`transition-transform duration-200 ${openIndex === index ? 'rotate-180' : ''}`}
+                size={24}
               />
             </button>
-            
 
             {openIndex === index && (
               <p className="bg-white text-black text-sm sm:text-base px-4 py-3 shadow mt-1 border rounded-xl">

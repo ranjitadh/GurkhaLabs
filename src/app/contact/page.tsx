@@ -1,41 +1,70 @@
+"use client"
+
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Faq from "@/components/ui/Faq";
 import MapEmbed from "@/components/ui/MapEmbed";
-
+import SwipeButton from "@/components/animata/button/swipe-button";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <div className="flex flex-col items-center justify-center text-white font-bold bg-black min-h-screen space-y-6 p-4 sm:p-8">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl text-white bg-transparent text-center">
+      
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-2xl sm:text-3xl md:text-4xl text-white bg-transparent text-center"
+      >
         Got any questions?
-      </h1>
+      </motion.h1>
 
-      <p className="text-center max-w-xl text-base sm:text-lg">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-center max-w-xl text-base sm:text-lg"
+      >
         Our team is always here to help. Send us a message or directly call us
         and we&apos;ll get back to you shortly.
-      </p>
+      </motion.p>
 
-      <div>
-        <a
-          href="/contact"
-          className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 sm:px-6 rounded-4xl text-lg sm:text-xl"
-        >
-          Contact Us
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="mt-8 flex justify-center animate-pulse"
+      >
+        <a href="/contact">
+          <SwipeButton
+            className="cursor-pointer"
+            firstClass="bg-white text-black rounded"
+            firstText="Contact us"
+            secondClass="bg-black text-white border border-white rounded"
+            secondText="Contact us"
+          />
         </a>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-64 w-full max-w-6xl">
-        <div className="flex flex-col space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 md:gap-x-64 w-full max-w-6xl">
+      
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          // transition={{ duration: 0.01 }}
+          className="flex flex-col space-y-4"
+        >
           <input
             type="text"
             placeholder="Name"
-            className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
+            className="border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
           />
+
           <select
             name="text"
             defaultValue=""
-            className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
+            className="border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
           >
             <option value="" disabled hidden>
               Inquiry type
@@ -48,9 +77,9 @@ const Contact = () => {
 
           <select
             name="service"
-            className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
+            className="border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
           >
-            <option value="" disabled selected hidden>
+            <option value="" disabled hidden>
               Service Required
             </option>
             <option value="Web Design">Web Design</option>
@@ -65,19 +94,24 @@ const Contact = () => {
           <input
             type="email"
             placeholder="Email"
-            className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
+            className="border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-4xl text-base sm:text-lg"
           />
           <textarea
             placeholder="Message (optional)"
-            className="border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 rounded-4xl text-base sm:text-lg min-h-[120px]"
+            className="border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-4xl text-base sm:text-lg min-h-[120px]"
           />
-          <button className=" cursor-pointer border border-white bg-black text-white hover:border-[#3498db] hover:text-white font-bold py-2 px-4 rounded-4xl text-base sm:text-lg ">
+          <button className="cursor-pointer border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-4xl text-base sm:text-lg">
             Send
           </button>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col space-y-6 text-white items-start">
-          {/* Phone Section */}
+        {/* Contact  */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col space-y-6 text-white items-start mt-8 md:mt-0"
+        >
           <div className="flex items-center space-x-4 w-full">
             <Phone className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer flex-shrink-0" />
             <div>
@@ -88,7 +122,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Email Section */}
           <div className="flex items-center space-x-4 w-full">
             <Mail className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer flex-shrink-0" />
             <div>
@@ -109,7 +142,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Location */}
           <div className="flex items-center space-x-4 w-full">
             <MapPin className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer flex-shrink-0" />
             <div>
@@ -119,10 +151,16 @@ const Contact = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center text-white font-bold bg-black sm:p-8">
+      {/* Location */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-center justify-center text-white font-bold bg-black sm:p-8"
+      >
         <h1 className=" text-2xl sm:text-3xl md:text-4xl text-white bg-transparent">
           Our Location
         </h1>
@@ -130,13 +168,26 @@ const Contact = () => {
         <p className="text-xl font-medium text-white">
           Visit us at our office in Sankhamul, Lalitpur
         </p>
-      </div>
+      </motion.div>
 
-      {/* Map */}
+      {/* Map Embed */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <MapEmbed location="27.681649933434066, 85.3285974448767" />
+      </motion.div>
 
-      <MapEmbed location="27.681649933434066, 85.3285974448767" />
-
-      <Faq />
+      {/* FAQ */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full"
+      >
+        <Faq />
+      </motion.div>
     </div>
   );
 };
