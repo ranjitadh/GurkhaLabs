@@ -1,5 +1,3 @@
-"use client"
-
 import { HTMLAttributes } from "react";
 import { motion } from "framer-motion";
 

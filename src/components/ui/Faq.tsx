@@ -49,23 +49,30 @@ const Faq: React.FC = () => {
 
       <div className="w-full max-w-md sm:max-w-xl md:max-w-2xl space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index}>
+          <div key={index} className="transition-all duration-300">
             <button
               onClick={() => toggleAnswer(index)}
-              className="w-full text-left text-sm sm:text-base md:text-lg font-semibold bg-white text-black px-4 py-3 shadow flex justify-between items-center border rounded-xl"
+              className={`w-full text-left text-sm sm:text-base md:text-lg font-semibold 
+                px-4 py-3 shadow flex justify-between items-center border rounded-xl
+                backdrop-blur-md bg-white/10 text-white hover:bg-white/20
+                transition-all duration-300`}
             >
               <span className="flex-1 pr-4">{faq.question}</span>
               <ChevronDown
-                className={`transition-transform duration-200 ${openIndex === index ? 'rotate-180' : ''}`}
+                className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
                 size={24}
               />
             </button>
 
-            {openIndex === index && (
-              <p className="bg-white text-black text-sm sm:text-base px-4 py-3 shadow mt-1 border rounded-xl">
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out
+                ${openIndex === index ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'}
+              `}
+            >
+              <p className="backdrop-blur-lg bg-white/10 text-white text-sm sm:text-base px-4 py-3 shadow border border-white/20 rounded-xl">
                 {faq.answer}
               </p>
-            )}
+            </div>
           </div>
         ))}
       </div>

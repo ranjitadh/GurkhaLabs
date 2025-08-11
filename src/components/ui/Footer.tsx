@@ -13,8 +13,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Our Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-bold ml-10 mb-4">Our Services</h3>
+            <ul className="space-y-2 ml-10">
               {[
                 "Web Design",
                 "Web Development",
@@ -34,8 +34,8 @@ const Footer = () => {
 
           {/* About */}
           <div>
-            <h3 className="text-lg font-bold mb-4">About</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-bold mb-4  ml-10">About</h3>
+            <ul className="space-y-2  ml-10">
               {["Company", "Vision", "Mission", "Team"].map((item, index) => (
                 <li key={index}>
                   <a href="#" className="hover:text-gray-400 transition-colors">
@@ -48,8 +48,8 @@ const Footer = () => {
 
           {/* Career */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Career</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-bold mb-4  ml-10">Career</h3>
+            <ul className="space-y-2  ml-10">
               {["Job Openings", "Employee Success", "Case Study"].map(
                 (item, index) => (
                   <li key={index}>
@@ -67,8 +67,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-            <p className="mb-2 flex items-center">
+            <h3 className="text-lg font-bold mb-4  ml-10">Contact Us</h3>
+            <p className="mb-2 flex items-center  ml-10">
               <Mail className="mr-2 h-5 w-5" />
               <a
                 href="mailto:admin@admin.com"
@@ -77,7 +77,7 @@ const Footer = () => {
                 admin@admin.com
               </a>
             </p>
-            <p className="mb-2 flex items-center">
+            <p className="mb-2 flex items-center ml-10">
               <Phone className="mr-2 h-5 w-5" />
               <a
                 href="tel:+9779705970533"
@@ -86,7 +86,7 @@ const Footer = () => {
                 +977 9705970533
               </a>
             </p>
-            <p className="mb-2 flex items-center">
+            <p className="mb-2 flex items-center ml-10">
               <MapPin className="mr-2 h-5 w-5" />
               Sankhamul, Lalitpur, Nepal
             </p>

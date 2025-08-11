@@ -6,13 +6,15 @@ export default function LogoMarquee() {
   const logos = [
     { src: "/assets/Images/khatraDokan.png", width: 150, height: 150 },
     { src: "/assets/Images/nakab.png", width: 150, height: 150 },
-    { src: "/assets/Images/Tara Global Logo.png", width: 120, height: 120 },
-    { src: "/assets/Images/helios.jpg", width: 130, height: 130 },
+    { src: "/assets/Images/Tara Global Logo.png", width: 150, height: 150 },
+    { src: "/assets/Images/helios.jpg", width: 150, height: 150 },
+     { src: "/assets/Images/nakab.png", width: 150, height: 150 },
+
   ];
 
   return (
    <div className="storybook-fix relative flex h-full max-h-96 min-h-72 w-full min-w-72 items-center justify-center overflow-hidden rounded  bg-background">
-      <Marquee speed={80} gradient={true} gradientColor="black" pauseOnHover={true}>
+      <Marquee speed={80}   direction="right"  gradient={true} gradientColor="black" pauseOnHover={true}>
         {logos.map((img, index) => (
           <div
             key={index}

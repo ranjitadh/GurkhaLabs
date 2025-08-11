@@ -11,47 +11,46 @@ const ourwork = [
   {
     image: "/assets/Images/helios.jpg",
     header: "Helios Nepal",
-    text:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor, commodi minus tempore unde rerum ratione qui quibusdam ipsa? Tenetur molestiae amet ab magni, eligendi eum pariatur optio iusto corrupti.",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor, commodi minus tempore unde rerum ratione qui quibusdam ipsa?",
   },
   {
     image: "/assets/Images/Tara Global Logo.png",
     header: "Tara Global Pvt. Ltd.",
-      text:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor, commodi minus tempore unde rerum ratione qui quibusdam ipsa? Tenetur molestiae amet ab magni, eligendi eum pariatur optio iusto corrupti.",
-
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor, commodi minus tempore unde rerum ratione qui quibusdam ipsa?",
   },
   {
     image: "/assets/Images/nakab.png",
     header: "Nakab",
-       text:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor, commodi minus tempore unde rerum ratione qui quibusdam ipsa? Tenetur molestiae amet ab magni, eligendi eum pariatur optio iusto corrupti.",
-
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor, commodi minus tempore unde rerum ratione qui quibusdam ipsa?",
   },
 ];
 
 const Works = () => {
   return (
-    <div className="bg-black py-12 px-4 sm:px-10 text-white">
-      
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
+    <div className="bg-black py-10 px-4 sm:px-8 text-white">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">
         Our <span className="text-[#3498db]">Works</span>
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
         {ourwork.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-900 rounded-xl shadow-md hover:shadow-2xl p-4 transition-all duration-300 transform hover:-translate-y-2"
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-md p-4 
+              transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer max-w-[280px] mx-auto"
           >
-            <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
-              <Image
-                src={item.image}
-                alt={item.header}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+            <div className="flex items-start space-x-4 mb-4">
+              <div className="relative w-12 h-12 flex-shrink-0 rounded-md overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.header}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-md"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-[#3498db]">{item.header}</h3>
             </div>
-            <h3 className="text-xl font-semibold text-[#3498db] mb-2">
-              {item.header}
-            </h3>
             <p className="text-gray-300 text-sm">{item.text}</p>
           </div>
         ))}

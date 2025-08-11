@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
-import clsx from "clsx"; 
+import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
 import SlideArrowButton from "@/components/animata/button/side-arrow-button";
-
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,10 +57,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Button */}
           <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <SlideArrowButton
-  primaryColor="#000000"
-  text="Get in Touch"
-/>
+              <SlideArrowButton primaryColor="#000000" text="Get in Touch" />
             </Link>
           </div>
 
@@ -77,38 +74,40 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu with Animation */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="bg-black px-4 pb-4 pt-2 space-y-3 text-white font-semibold text-lg">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className={clsx(
-                "block py-2 px-2 rounded transition duration-200",
-                pathname === link.href
-                  ? "text-[#3498db] font-bold"
-                  : "text-white hover:text-[#3498db]"
-              )}
-            >
-              {link.name}
+      {/* Animated Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-black px-4 pb-4 pt-2 space-y-3 text-white font-semibold text-lg overflow-hidden"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={clsx(
+                  "block py-2 px-2 rounded transition duration-200",
+                  pathname === link.href
+                    ? "text-[#3498db] font-bold"
+                    : "text-white hover:text-[#3498db]"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+              <button className="mt-4 w-full border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300">
+                Get in Touch
+              </button>
             </Link>
-          ))}
-
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="mt-4 w-full border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300">
-              Get in Touch
-            </button>
-          </Link>
-
-          
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

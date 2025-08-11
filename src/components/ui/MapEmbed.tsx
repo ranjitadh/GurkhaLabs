@@ -9,7 +9,7 @@ const MapEmbed = ({ location = '37.7749,-122.4194' }) => {
 
   return (
     <iframe
-      className="w-full h-[360px] rounded-lg border-none"
+      className="w-full h-[300px] sm:h-[400px] md:h-[500px] border-none"
       src={simpleEmbedUrl}
       height="580"
       loading="lazy"

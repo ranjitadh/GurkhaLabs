@@ -55,11 +55,11 @@ const About = () => {
       </div>
 
       {/* Teams, Testimonials, FAQ */}
-      <div className="animate-zoomIn">
+
         <Teams />
         <TestiMonials />
         <Faq />
-      </div>
+    
 
       {/* CTA Section */}
       <div className="bg-black text-white rounded-t-4xl text-center py-16 animate-fadeIn">
@@ -73,9 +73,9 @@ const About = () => {
           <a href="/contact">
             <SwipeButton
               className="cursor-pointer"
-              firstClass="bg-black text-white border border-white rounded  animate-pulse"
+              firstClass="bg-white text-black border border-white rounded  animate-pulse"
               firstText="Contact us"
-              secondClass="bg-[#3298db] text-white"
+              secondClass="bg-black text-white border border-white rounded"
               secondText="Contact us"
             />
           </a>
