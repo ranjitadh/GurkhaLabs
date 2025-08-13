@@ -24,7 +24,7 @@ const Footer = () => {
                 "IT Consultation",
               ].map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-gray-400 transition-colors">
+                  <a href="/services" className="hover:text-gray-400 transition-colors">
                     {service}
                   </a>
                 </li>
@@ -38,7 +38,7 @@ const Footer = () => {
             <ul className="space-y-2  ml-10">
               {["Company", "Vision", "Mission", "Team"].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-gray-400 transition-colors">
+                  <a href="About" className="hover:text-gray-400 transition-colors">
                     {item}
                   </a>
                 </li>
@@ -54,7 +54,7 @@ const Footer = () => {
                 (item, index) => (
                   <li key={index}>
                     <a
-                      href="#"
+                      href="contact"
                       className="hover:text-gray-400 transition-colors"
                     >
                       {item}
@@ -107,10 +107,10 @@ const Footer = () => {
         {/* Bottom Links */}
         <div className="border-t border-gray-700 pt-6 text-center">
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
-            <a href="#" className="hover:text-gray-400 transition-colors">
+            <a href="about" className="hover:text-gray-400 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-gray-400 transition-colors">
+            <a href="about" className="hover:text-gray-400 transition-colors">
               Terms of Service
             </a>
           </div>
