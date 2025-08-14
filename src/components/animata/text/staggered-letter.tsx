@@ -32,17 +32,19 @@ export default function StaggeredLetter({
     >
       {applyMask && <div className={cn(common, "absolute text-gray-400")}>{text}</div>}
       <div className="flex">
-        {text.split("").map((letter, index) => (
+        {text.split("").map((e, index) => (
           <motion.div
+         
+             key={index}
+          
             className={common}
             initial={{ opacity: 0, y: direction === "up" ? 150 : -150 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: index * delay,
             }}
-            key={letter}
           >
-            {letter === " " ? <span>&nbsp;</span> : letter}
+            {e === " " ? <span>&nbsp;</span> : e}
           </motion.div>
         ))}
       </div>
