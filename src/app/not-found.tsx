@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image"
 
 export default function NotFound() {
   return (
@@ -12,14 +13,22 @@ export default function NotFound() {
       </div>
 
       {/* Animated 404 */}
-      <motion.h1
+      {/* <motion.h1
         className="text-[8rem] font-extrabold tracking-widest drop-shadow-lg"
         initial={{ opacity: 0, y: -50, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         404
-      </motion.h1>
+      </motion.h1> */}
+
+      <Image
+        src="/assets/SVG/404.svg"
+        alt="404 Not Found"
+        width={500}
+        height={500}
+        className="mt-8"
+      />
 
       {/* Subtitle animation */}
       <motion.p

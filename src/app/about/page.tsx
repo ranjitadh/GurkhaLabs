@@ -62,7 +62,7 @@ const About = () => {
     
 
       {/* CTA Section */}
-      <div className="bg-black text-white rounded-t-4xl text-center py-16 animate-fadeIn">
+      <div className="bg-gradient-to-r from-[#3498db] to-[#ff903e] mt-3 mb-3 text-gray-800 text-center py-16 animate-fadeIn">
         <h2 className="text-5xl font-bold mb-4">
           Not sure which service suits you?
         </h2>

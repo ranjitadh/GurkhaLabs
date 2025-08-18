@@ -44,7 +44,7 @@ const Page = () => {
           viewport={{ once: true }}
         >
           <Image
-            src="/assets/Images/settings.png"
+            src="/assets/SVG/service.svg"
             width={400}
             height={400}
             alt="Settings illustration"

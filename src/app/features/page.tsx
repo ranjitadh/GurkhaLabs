@@ -73,7 +73,7 @@ const Page = () => {
           className="flex justify-center items-center w-full px-4 py-10"
         >
           <Image
-            src="/assets/Images/feature.jpg"
+            src="/assets/SVG/Features.svg"
             width={400}
             height={400}
             alt="feature"

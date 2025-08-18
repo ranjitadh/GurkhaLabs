@@ -14,7 +14,8 @@ import {
   InquiryType,
   ServiceType,
 } from "@/types/contact";
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster, toast } from 'sonner'
+
 
 const Contact = () => {
   const {
@@ -39,7 +40,7 @@ const Contact = () => {
         reset();
       } else {
         const { error } = await res.json();
-        toast.error("Error: " + JSON.stringify(error));
+        toast.error("Unable to send message please try again later. ");
       }
     } catch (err) {
       toast.error("Unable to send message please try again later.");
@@ -163,7 +164,7 @@ const Contact = () => {
           >
             {isSubmitting ? "Sending..." : "Send"}
           </button>
-          <Toaster />
+          <Toaster position="top-center"/>
         </motion.form>
 
         {/* Contact Info */}

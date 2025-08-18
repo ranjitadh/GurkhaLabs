@@ -4,6 +4,8 @@ import "./globals.css";
 // import VantaNetBackground from "@/components/ui/Vantabg";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import ChatBotWrapper from "@/components/ui/SarathiBot";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -115,7 +117,13 @@ export default function RootLayout({
 
         <Footer />
         {/* </VantaNetBackground> */}
+
+
+       <ChatBotWrapper/>
       </body>
+
+     
+            
     </html>
   );
 }
