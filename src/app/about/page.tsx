@@ -1,86 +1,109 @@
+"use client";
+import React from "react";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import Faq from "@/components/ui/Faq";
 import Teams from "@/components/ui/Teams";
 import TestiMonials from "@/components/ui/TestiMonials";
-import "./about.css"
+import Image from "next/image";
 
 const About = () => {
   return (
     <div className="bg-black text-white overflow-hidden">
-      {/* Company Section */}
-      <div className="px-6 md:px-28 py-10 animate-fadeIn">
-        <h1 className="text-4xl underline decoration-[#3498db] font-bold text-center mb-6">
-          Company
-        </h1>
-        <p className="text-lg leading-relaxed">
-          <span className="font-extrabold text-[#3498db] tracking-wider animate-pulse">
-            KhatraTech,
-          </span>{" "}
-          where innovation meets excellence. Founded with a passion for technology and a
-          commitment to quality. We specialize in providing best and comprehensive tech
-          solutions to businesses of all sizes. Our team of experienced professionals excels
-          in web design, web development, app development, digital marketing, IT consultation,
-          and graphics design. We pride ourselves on delivering top-notch services that drive
-          growth, enhance efficiency, and create lasting value for our clients.
-        </p>
-      </div>
-
-      {/* Vision */}
-      <div className="px-6 md:px-28 py-10 animate-slideInLeft">
-        <h1 className="text-4xl font-bold text-center underline decoration-[#3498db] mb-4">
-          Vision
-        </h1>
-        <p className="text-lg leading-relaxed">
-          Our vision is to be one of a kind in technology solutions, recognized for our creativity,
-          innovation, and unwavering dedication to excellence. We strive to empower businesses
-          by providing cutting-edge technology services that enable them to thrive in an
-          ever-evolving digital landscape. We aim to build long-lasting relationships with our clients,
-          based on trust, transparency, and mutual success.
-        </p>
-      </div>
-
-      {/* Mission */}
-      <div className="px-6 md:px-28 py-10 animate-slideInRight">
-        <h1 className="text-4xl font-bold text-center underline decoration-[#3498db] mb-4">
-          Mission
-        </h1>
-        <p className="text-lg leading-relaxed">
-          Our mission is to deliver innovative and customized tech solutions that meet the unique
-          needs of each client. We are dedicated to providing exceptional service and achieving
-          outstanding results. Our approach combines technical expertise, creativity, and a deep
-          understanding of our clients&apos; goals. By staying ahead of industry trends and continually
-          improving our skills, we ensure our clients receive the best possible solutions to achieve
-          their business objectives. At KhatraTech, we are committed to making technology work for you.
-        </p>
-      </div>
-
-      {/* Teams, Testimonials, FAQ */}
-
-        <Teams />
-        <TestiMonials />
-        <Faq />
     
+      <div className="px-6 md:px-28 py-16 grid md:grid-cols-2 gap-10 items-center">
+   
+        <div className="flex justify-center">
+          <Image
+            src="/assets/SVG/COMPANY.svg"
+            alt="Company"
+            height={400}
+            width={500}
+            className="rounded-2xl shadow-lg"
+          />
+        </div>
 
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-[#3498db] to-[#ff903e] mt-3 mb-3 text-gray-800 text-center py-16 animate-fadeIn">
-        <h2 className="text-5xl font-bold mb-4">
-          Not sure which service suits you?
-        </h2>
-        <p className="text-2xl font-medium">
-          Get in touch with our team, We are always happy to help you.
-        </p>
-        <div className="mt-8 flex justify-center  animate-pulse">
-          <a href="/contact">
-            <SwipeButton
-              className="cursor-pointer"
-              firstClass="bg-white text-black border border-white rounded  animate-pulse"
-              firstText="Contact us"
-              secondClass="bg-black text-white border border-white rounded"
-              secondText="Contact us"
-            />
-          </a>
+        <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-[#3498db] transition-all duration-300">
+          <h2 className="text-3xl font-bold text-[#3498db] mb-4">Company</h2>
+          <p className="text-gray-300 leading-relaxed">
+            <span className="font-extrabold text-[#3498db] tracking-wider">
+              KhatraTech,
+            </span>{" "}
+            where innovation meets excellence. Founded with a passion for
+            technology and a commitment to quality. We specialize in providing
+            best and comprehensive tech solutions to businesses of all sizes. Our
+            team of experienced professionals excels in web design, web
+            development, app development, digital marketing, IT consultation, and
+            graphics design. We pride ourselves on delivering top-notch services
+            that drive growth, enhance efficiency, and create lasting value for
+            our clients.
+          </p>
         </div>
       </div>
+
+  
+      <div className="px-6 md:px-28 py-16 grid md:grid-cols-2 gap-10 items-center">
+       
+        <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-[#ff903e] transition-all duration-300 order-2 md:order-1">
+          <h2 className="text-3xl font-bold text-[#ff903e] mb-4">Vision</h2>
+          <p className="text-gray-300 leading-relaxed">
+            Our vision is to be one of a kind in technology solutions, recognized
+            for our creativity, innovation, and unwavering dedication to
+            excellence. We strive to empower businesses by providing cutting-edge
+            technology services that enable them to thrive in an ever-evolving
+            digital landscape. We aim to build long-lasting relationships with our
+            clients, based on trust, transparency, and mutual success.
+          </p>
+        </div>
+  
+        <div className="flex justify-center order-1 md:order-2">
+          <Image
+            src="/assets/SVG/vision.svg"
+            alt="Vision"
+            height={400}
+            width={500}
+            className="rounded-2xl shadow-lg"
+          />
+        </div>
+      </div>
+
+      
+      <div className="px-6 md:px-28 py-16 grid md:grid-cols-2 gap-10 items-center">
+      
+        <div className="flex justify-center">
+          <Image
+            src="/assets/SVG/MISSION.svg"
+            alt="Mission"
+            height={400}
+            width={500}
+            className="rounded-2xl shadow-lg"
+          />
+        </div>
+
+        <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-[#3498db] transition-all duration-300">
+          <h2 className="text-3xl font-bold text-[#3498db] mb-4">Mission</h2>
+          <p className="text-gray-300 leading-relaxed">
+            Our mission is to deliver innovative and customized tech solutions
+            that meet the unique needs of each client. We are dedicated to
+            providing exceptional service and achieving outstanding results. Our
+            approach combines technical expertise, creativity, and a deep
+            understanding of our clients&apos; goals. By staying ahead of industry
+            trends and continually improving our skills, we ensure our clients
+            receive the best possible solutions to achieve their business
+            objectives. At KhatraTech, we are committed to making technology work
+            for you.
+          </p>
+        </div>
+      </div>
+
+  
+      <Teams />
+
+  
+      <TestiMonials />
+
+
+      <Faq />
+
     </div>
   );
 };

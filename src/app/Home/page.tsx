@@ -55,11 +55,11 @@ const page = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="bg-black flex flex-col justify-center items-center text-center px-4 py-16 text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+        className="bg-black flex flex-col justify-center items-center text-center px-4 py-16 text-white text-7xl md:text-6xl lg:text-7xl font-bold leading-tight"
       >
         <JumpingTextInstagram text="Service " />
-        <JumpingTextInstagram text="that " />
-        <JumpingTextInstagram text="Sparks Your" />
+        <JumpingTextInstagram text="That Sparks  " />
+      
         <JumpingTextInstagram text="Growth" />
       </motion.div>
 

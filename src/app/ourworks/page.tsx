@@ -8,34 +8,30 @@ const page = () => {
    <>
 
 
+<div className="custom-bg-gradient">
 
-     <p className="mt-4 font-extrabold text-white  flex justify-center items-center underline decoration-3 decoration-[#3498db] text-5xl">Some of our recent projects</p>
+
+     <p className="mt-4 font-extrabold text-white  flex justify-center items-center underline decoration-3 decoration-[#3498db] text-5xl">Some of our recent&nbsp;<span className="text-white underline decoration-3 decoration-amber-500">projects</span></p>
      <div className="relative w-screen h-screen">
-      {/* Background wave (z-0) */}
-      <Image
-        src="/assets/SVG/wave.svg"
-        alt="Wave"
-        fill
-        className="object-cover rounded-lg z-0"
-        priority
-      />
+  
 
       {/* Foreground image (z-10) */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <Image
           src="/assets/SVG/team-work-animate.svg"
           alt="TeamWork"
-          width={1000}
-          height={1000}
-          className="object-cover rounded-lg"
+          width={800}
+          height={800}
+    
+          className=""
         />
       </div>
       </div>
 
 
       <Works/>
-<LogoMarquee/>
-      
+      <LogoMarquee/>
+      </div>
 
 
    </>
@@ -43,3 +39,5 @@ const page = () => {
 }
 
 export default page
+
+

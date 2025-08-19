@@ -43,13 +43,15 @@ const Page = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Image
-            src="/assets/SVG/service.svg"
-            width={400}
-            height={400}
-            alt="Settings illustration"
-            className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px]"
-          />
+         <Image
+  src="/assets/SVG/active-supprot.svg"
+  width={400}
+  height={400}
+  alt="Settings illustration"
+  priority
+  className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px]"
+/>
+
         </motion.div>
       </div>
 

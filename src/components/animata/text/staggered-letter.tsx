@@ -17,20 +17,20 @@ export default function StaggeredLetter({
   applyMask = true,
   text = "Animata",
   delay = 0.09,
-  direction = "drop",
+  direction = "up",
   className,
   ...props
 }: DropLetterProps) {
-  const common = "text-7xl font-bold drop-shadow-lg";
+  const common = "text-7xl font-bold ";
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center text-foreground",
+        "  items-center justify-center ",
         className,
       )}
       {...props}
     >
-      {applyMask && <div className={cn(common, "absolute text-gray-400")}>{text}</div>}
+      {applyMask && <div className={cn(common, "absolute text-gray-300")}>{text}</div>}
       <div className="flex">
         {text.split("").map((e, index) => (
           <motion.div

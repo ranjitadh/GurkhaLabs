@@ -9,7 +9,7 @@ const testimonials = [
     user: "Tara Global, Owner",
   },
   {
-    text: "KhatraTech's digital marketing services have been a game-changer for our business. Their targeted campaigns and innovative strategies have significantly boosted our online presence. ",
+    text: "KhatraTech's digital marketing services have been a game-changer for our business. Their targeted campaigns and innovative strategies have significantly boosted our online presence.",
     name: "Aadarsh Bhattarai",
     icon: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
     user: "User",
@@ -20,22 +20,68 @@ const testimonials = [
     icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
     user: "Helios Nepal, CEO",
   },
+   {
+    text: "KhatraTech transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
+    name: "Anjan",
+    icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
+    user: "Helios Nepal, CEO",
+  },
+   {
+    text: "KhatraTech transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
+    name: "Anjan",
+    icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
+    user: "Helios Nepal, CEO",
+  },
+   {
+    text: "KhatraTech transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
+    name: "Anjan",
+    icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
+    user: "Helios Nepal, CEO",
+  },
+   {
+    text: "KhatraTech transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
+    name: "Anjan",
+    icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
+    user: "Helios Nepal, CEO",
+  },
+   {
+    text: "KhatraTech transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
+    name: "Anjan",
+    icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
+    user: "Helios Nepal, CEO",
+  },
+   {
+    text: "KhatraTech transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
+    name: "Anjan",
+    icon: "https://www.khatratech.com/assets/img/associated/helios.jpg",
+    user: "Helios Nepal, CEO",
+  },
+  
 ];
 
 const TestiMonials = () => {
   return (
     <div className="text-white mt-10 flex flex-col items-center px-4">
-      <h1 className="text-4xl mb-10 font-bold underline decoration-[#3498db] tracking-tight">Testimonials</h1>
-     
+      <h1 className="text-4xl mb-10 font-bold underline decoration-[#3498db] tracking-tight">
+        Testimonials
+      </h1>
 
-      <Marquee speed={80} gradient={true} gradientColor="black" pauseOnHover={false} className="w-full">
-        <div className="flex gap-6 px-4">
+      <Marquee
+        speed={80}
+        gradient={true}
+        gradientColor={[0, 0, 0]}
+        pauseOnHover={true}
+        loop={0}
+      >
+        <div className="flex">
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-800  p-6 rounded-xl shadow-lg flex flex-col justify-between h-[300px] min-w-[320px] mx-2 transition-transform transform hover:scale-90 hover:shadow-xl border border-gray-700"
+              className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col justify-between h-[300px] min-w-[320px] mx-2 transition-transform transform hover:scale-90 hover:shadow-xl border border-gray-700 flex-shrink-0"
             >
-              <p className="text-sm text-gray-200 mb-4 flex justify-center w-40 italic line-clamp-6">"{item.text}"</p>
+              <p className="text-sm text-gray-200 mb-4 flex justify-center w-40 italic line-clamp-6">
+                "{item.text}"
+              </p>
               <div className="mt-auto flex items-center gap-4">
                 {item.icon && (
                   <img

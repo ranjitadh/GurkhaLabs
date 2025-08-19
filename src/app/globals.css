@@ -56,3 +56,10 @@
   initial-value: 0deg;
   inherits: false;
 }
+
+.custom-bg-gradient {
+  background-image: url('/assets/SVG/blurry-gradient-haikei.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fill;
+}

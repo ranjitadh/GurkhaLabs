@@ -41,7 +41,7 @@ const Faq: React.FC = () => {
   }
 
   return (
-    <section className="text-white mt-12 flex flex-col items-center px-4 sm:px-6 lg:px-8">
+    <section className="text-white mt-12 flex flex-col items-center px-4 sm:px-6 lg:px-8 mb-8">
       <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-center">
         FAQ
       </h1>
