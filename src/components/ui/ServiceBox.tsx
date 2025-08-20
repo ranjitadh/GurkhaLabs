@@ -51,7 +51,7 @@ const services: Service[] = [
 
 const ServiceBox: React.FC = () => {
   return (
-    <section className="bg-black text-white py-10 sm:py-16">
+    <section className="bg-transparent text-white py-10 sm:py-16">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 underline decoration-[#3294db] animate-(--animate-fade-in-down)">
         We Offer Awesome{" "}
         <span className="text-[#3498db] underline decoration-amber-50">
@@ -75,12 +75,14 @@ const ServiceBox: React.FC = () => {
               {/* Image/FlipCard */}
               <div className="w-full md:w-1/2 flex justify-center">
                 <FlipCard
+                
                   image={svc.image}
                   title={svc.title}
                   subtitle={svc.subtitle}
                   description={svc.description}
-                  rotate={svc.rotate}
-                  className="w-[300px] h-[180px] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+              
+                  rotate="y"
+                  className="w-[600px] h-[400px] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                 />
               </div>
 

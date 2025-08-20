@@ -5,7 +5,7 @@ import Image from "next/image";
 const workflow = () => {
   return (
     <>
-      <div className="bg-black text-white text-center py-10 sm:py-16">
+      <div className="bg-transparent text-white text-center py-10 sm:py-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold px-4">
           Services that make your workflow{" "}
           <span className="text-[#3498db]">easier.</span>
@@ -53,7 +53,7 @@ const workflow = () => {
         </div>
       </div>
 
-      <div className="bg-black text-white py-10 sm:py-16">
+      <div className="bg-transparent text-white py-10 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
           {[
             {

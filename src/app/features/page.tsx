@@ -37,7 +37,7 @@ const fadeInRight = {
 
 const Page = () => {
   return (
-    <div className="bg-black text-white w-full overflow-hidden">
+    <div className="bg-transparent text-white w-full overflow-hidden">
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row w-full">
         <motion.div
@@ -58,7 +58,7 @@ const Page = () => {
                 className="cursor-pointer"
                 firstClass="bg-white text-black rounded"
                 firstText="Contact us"
-                secondClass="bg-black text-white border border-white"
+                secondClass="bg-transparent text-white border border-white"
                 secondText="Contact us"
               />
             </Link>
@@ -90,7 +90,7 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-black text-white"
+        className="flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
       >
         <div className="w-full md:w-1/2 flex justify-center">
           <Image
@@ -122,7 +122,7 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-black text-white"
+        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
       >
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold">
@@ -156,7 +156,7 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInRight}
-        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-black text-white"
+        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
       >
         <div className="w-full md:w-1/2 flex justify-center">
           <Image

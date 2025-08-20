@@ -107,7 +107,7 @@ export default function RootLayout({
       <body
         // {/* remove black after using vantajs and use bg-transparent*/}
 
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black`}
       >
         {/* <VantaNetBackground options={{mouseControls:true,touchControls:true}}> */}
         <Navbar />
@@ -119,7 +119,7 @@ export default function RootLayout({
         {/* </VantaNetBackground> */}
 
 
-       <ChatBotWrapper/>
+       <ChatBotWrapper />
       </body>
 
      

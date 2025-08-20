@@ -16,7 +16,7 @@ export default function SwipeButton({
   secondText = "Get access",
   firstText = "Get access",
   firstClass = "bg-orange-500 text-white",
-  secondClass = "bg-black text-white",
+  secondClass = "bg-transparent text-white",
   ...props
 }: SwipeButtonProps) {
   const common = "block px-4 py-2   text-2xl font-bold duration-300 ease-in-out";

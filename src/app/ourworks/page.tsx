@@ -8,7 +8,7 @@ const page = () => {
    <>
 
 
-<div className="custom-bg-gradient">
+<div className="bg-gradient-to-br via-gray-900 from-[#103045] to-black">
 
 
      <p className="mt-4 font-extrabold text-white  flex justify-center items-center underline decoration-3 decoration-[#3498db] text-5xl">Some of our recent&nbsp;<span className="text-white underline decoration-3 decoration-amber-500">projects</span></p>

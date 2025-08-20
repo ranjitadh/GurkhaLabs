@@ -27,7 +27,7 @@ const ourwork = [
 
 const Works = () => {
   return (
-    <div className="bg-black py-10 px-4 sm:px-8 text-white">
+    <div className="bg-transparent py-10 px-4 sm:px-8 text-white">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">
         Our <span className="text-[#3498db]">Works</span>
       </h2>

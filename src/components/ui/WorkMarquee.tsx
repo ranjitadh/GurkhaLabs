@@ -13,8 +13,8 @@ export default function LogoMarquee() {
   ];
 
   return (
-   <div className="storybook-fix relative flex h-full max-h-96 min-h-72 w-full min-w-72 items-center justify-center overflow-hidden rounded  bg-background z-0">
-      <Marquee speed={80}   direction="right"  gradient={true} gradientColor="black" pauseOnHover={false}>
+   <div className="storybook-fix relative flex h-full max-h-96 min-h-72 w-full min-w-72 items-center justify-center overflow-hidden rounded  bg-transparent z-0">
+      <Marquee speed={80}   direction="right"  gradient={false} gradientColor="black" pauseOnHover={false}>
         {logos.map((img, index) => (
           <div
             key={index}

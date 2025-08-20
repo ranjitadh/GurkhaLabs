@@ -55,11 +55,10 @@ const Teams = () => {
         Check out our amazing <span className="text-[#3498db]">team</span>
       </h1>
 
-      <div className="w-full overflow-hidden">
+      <div className="w-full overflow-visible">
         <Marquee
           speed={60}
-          gradient={true}
-          gradientColor="black"
+         
           pauseOnHover={true}
           direction="right" 
         >

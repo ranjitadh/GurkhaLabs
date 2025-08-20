@@ -55,7 +55,7 @@ const page = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="bg-black flex flex-col justify-center items-center text-center px-4 py-16 text-white text-7xl md:text-6xl lg:text-7xl font-bold leading-tight"
+        className="bg-transparent flex flex-col justify-center items-center text-center px-4 py-16 text-white text-7xl md:text-6xl lg:text-7xl font-bold leading-tight"
       >
         <JumpingTextInstagram text="Service " />
         <JumpingTextInstagram text="That Sparks  " />
@@ -138,7 +138,7 @@ const page = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="bg-black text-white px-4 py-16"
+        className="bg-transparent text-white px-4 py-16"
       >
         <h1 className="text-2xl sm:text-4xl font-bold text-center mb-6">
           Enhance your
@@ -153,7 +153,7 @@ const page = () => {
         </p>
 
         {/* Flip Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-6 mt-12">
           {sections.map((section, index) => (
             <motion.div
               key={index}
@@ -167,7 +167,7 @@ const page = () => {
                 subtitle={section.subtitle}
                 description={section.content}
                 rotate="y"
-                className="h-64 w-full max-w-md mx-auto"
+                className="h-60 w-full max-w-md mx-auto"
               />
             </motion.div>
           ))}
@@ -197,7 +197,7 @@ const page = () => {
                 className="cursor-pointer"
                 firstClass="bg-white text-black rounded"
                 firstText="Contact us"
-                secondClass="bg-black text-white border border-white"
+                secondClass="bg-transparent text-white border border-white"
                 secondText="Contact us"
               />
             </a>

@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="bg-black text-white overflow-hidden">
-    
+    <div className="bg-gradient-to-br via-gray-900 from-[#103045] to-black  text-white overflow-hidden">
+
       <div className="px-6 md:px-28 py-16 grid md:grid-cols-2 gap-10 items-center">
    
         <div className="flex justify-center">

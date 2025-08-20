@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import ServiceBox from "@/components/ui/ServiceBox";
-import Works from "@/components/ui/Works";
 import Marquee from "@/components/ui/WorkMarquee";
 import Workflow from "@/components/ui/flow";
 import SplitText from "@/components/animata/text/split-text";
@@ -16,7 +15,7 @@ const fadeInUp = {
 const Page = () => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-black text-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-transparent text-white">
         <motion.div
           className="flex flex-col justify-center p-6 sm:p-12 md:p-20 lg:p-28"
           initial="hidden"
@@ -56,7 +55,7 @@ const Page = () => {
       </div>
 
       <motion.div
-        className="bg-black text-white text-center py-10 sm:py-16"
+        className="bg-transparent text-white text-center py-10 sm:py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -93,7 +92,7 @@ const Page = () => {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <Works />
+
       </motion.div>
     </>
   );

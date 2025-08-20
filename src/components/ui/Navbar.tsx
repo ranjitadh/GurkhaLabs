@@ -18,12 +18,12 @@ const Navbar: React.FC = () => {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Features", href: "/features" },
-    { name: "Our Works", href: "/ourworks" },
+    { name: "Works", href: "/ourworks" },
     { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="bg-black shadow-lg z-50">
+    <nav className="bg-[#103045]  shadow-lg z-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Button */}
           <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <SlideArrowButton primaryColor="#000000" text="Get in Touch" />
+              <SlideArrowButton primaryColor="#103045" text="Get in Touch" />
             </Link>
           </div>
 
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-black px-4 pb-4 pt-2 space-y-3 text-white font-semibold text-lg overflow-hidden"
+            className="md:hidden bg-transparent px-4 pb-4 pt-2 space-y-3 text-white font-semibold text-lg overflow-hidden"
           >
             {navLinks.map((link) => (
               <Link
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
             ))}
 
             <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              <button className="mt-4 w-full border border-white bg-black text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300">
+              <button className="mt-4 w-full border border-white bg-transparent text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300">
                 Get in Touch
               </button>
             </Link>

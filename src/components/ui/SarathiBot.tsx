@@ -26,7 +26,7 @@ export default function ChatBotWrapper() {
             companyName="Khatra Tech"
             logo="/assets/Images/khatra tech color white.svg"
             theme={{
-              primary: "#3498db",
+              primary: "#103045",
               secondary: "#f5f7fa",
               text: "#ffffff",
               background: "#ffffff",
