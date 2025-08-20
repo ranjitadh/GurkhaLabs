@@ -30,8 +30,8 @@ export default function StaggeredLetter({
       )}
       {...props}
     >
-      {applyMask && <div className={cn(common, "absolute text-gray-300")}>{text}</div>}
-      <div className="flex">
+      {applyMask && <div className={cn(common, " flex justify-center items-center absolute text-gray-300")}>{text}</div>}
+      <div className="flex justify-center items-center">
         {text.split("").map((e, index) => (
           <motion.div
          

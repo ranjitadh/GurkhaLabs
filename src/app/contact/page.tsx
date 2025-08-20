@@ -177,7 +177,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col space-y-8 ml-20"
+          className="flex flex-col space-y-8 ml-10 sm:ml-0"
         >
            <Image
                 src="/assets/SVG/online-world-animate.svg"
@@ -197,7 +197,7 @@ const Contact = () => {
           },{
             icon: <MapPin className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
             title: "Location",
-            value: "Sankhamul Planning Cross 6, Lalitpur Nepal"
+            value: "Sankhamul, Lalitpur, Nepal"
           }].map((item, idx) => (
 
           

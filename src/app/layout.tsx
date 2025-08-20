@@ -107,7 +107,7 @@ export default function RootLayout({
       <body
         // {/* remove black after using vantajs and use bg-transparent*/}
 
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black pt-20`}
       >
         {/* <VantaNetBackground options={{mouseControls:true,touchControls:true}}> */}
         <Navbar />

@@ -44,8 +44,8 @@ const Works = () => {
                 <Image
                   src={item.image}
                   alt={item.header}
-                  layout="fill"
-                  objectFit="cover"
+                 fill
+                 
                   className="rounded-md"
                 />
               </div>
