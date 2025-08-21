@@ -11,6 +11,11 @@ import { FaFigma, FaAppStoreIos } from "react-icons/fa";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import JumpingTextInstagram from "@/components/animata/text/staggered-letter";
 import { motion } from "framer-motion";
+import QuoteHeading from "@/components/Quote/QuoteHeading";
+import HomeSkeleton from "@/components/ui/Skeleton/home";
+import { Suspense } from "react";
+
+
 
 const page = () => {
   const sections = [
@@ -50,28 +55,62 @@ const page = () => {
 
   return (
     <>
+      <Suspense fallback={<HomeSkeleton />}></Suspense>
+
       {/* Hero Section */}
-     <motion.div
+    <motion.div
+  suppressHydrationWarning
   initial={{ opacity: 0, y: -50 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
-  className="bg-transparent flex flex-col justify-center items-center text-center px-4 py-12 md:py-16 text-white font-bold leading-tight"
+  className="bg-transparent grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-12 md:py-16 text-white font-bold leading-tight"
 >
-  <JumpingTextInstagram text="Service" className="text-5xl sm:text-6xl lg:text-7xl" />
-  <JumpingTextInstagram text="That Sparks" className="text-5xl sm:text-6xl lg:text-7xl" />
-  <JumpingTextInstagram text="Growth" className="text-5xl sm:text-6xl lg:text-7xl" />
+  {/* Left Column: Text */}
+  <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left gap-4">
+    <QuoteHeading
+      text={
+        <JumpingTextInstagram
+          text="Service"
+          className="text-9xl sm:text-6xl lg:text-7xl"
+        />
+      }
+    />
+    
+    <JumpingTextInstagram
+      text="That Sparks"
+      className="text-9xl sm:text-6xl lg:text-7xl"
+    />
+    <JumpingTextInstagram
+      text="Growth"
+      className="text-9xl sm:text-6xl lg:text-7xl"
+    />
+  </div>
+
+  {/* Right Column: Image */}
+  <div className="flex justify-center md:justify-end">
+    <Image
+      src="/assets/SVG/data-extraction-animate.svg"
+      alt="computer AI"
+      height={1000}
+      width={1000}
+    
+    />
+  </div>
 </motion.div>
 
 
+
       {/* Our Services */}
-      <motion.h1
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="mt-20 text-center text-white text-3xl md:text-5xl font-bold underline decoration-4 decoration-[#3498db]"
-      >
-        Our Services
-      </motion.h1>
+    <motion.h1
+
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.6 }}
+  className="mt-20 flex items-center justify-center gap-3 text-white text-3xl md:text-5xl font-bold underline decoration-4 decoration-[#3498db]"
+>
+
+</motion.h1>
+<QuoteHeading className="text-5xl md:text-5xl font-bold text-center mb-10" text="Our Services" />
 
       <motion.div
         initial="hidden"
@@ -134,23 +173,22 @@ const page = () => {
       </motion.div>
 
       {/* Enhance Productivity Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="bg-transparent text-white px-4 py-16"
-      >
-        <h1 className="text-2xl sm:text-4xl font-bold text-center mb-6">
-          Enhance your
-          <span className="underline decoration-[#3294db]"> productivity </span>
-          with our expert solutions.
-        </h1>
+  <motion.div
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  className="bg-transparent text-white px-4 py-16"
+>
+  {/* Quote Heading already handles h1 */}
+  <QuoteHeading text="Enhance your" />
 
-        <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-medium">
-          Partnering with KhatraTech means providing your clients with the tools
-          and strategies they need to thrive in a digital-first world, achieving
-          measurable results and sustained success.
-        </p>
+  <p className="text-2xl sm:text-4xl font-bold text-center mb-6">
+    <span className="underline decoration-[#3294db]">productivity</span> with our expert solutions.
+  </p>
+</motion.div>
+
+        
+        
 
         {/* Flip Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-6 mt-12">
@@ -180,16 +218,16 @@ const page = () => {
           transition={{ duration: 0.8 }}
           className="text-center mt-20"
         >
-          <div className="flex justify-center items-center text-2xl sm:text-4xl gap-4">
+          <div className="flex font-bold text-white justify-center items-center text-2xl sm:text-4xl gap-4">
             <Image
               src="/assets/Images/customer-service.png"
               height={50}
               width={50}
               alt="customer service"
             />
-            <span>Get in Touch</span>
+            <span className="font-bold text-white">Get in Touch</span>
           </div>
-          <p className="mt-4 font-bold text-lg">Let&apos;s Discuss Your Need</p>
+          <p className="mt-4 font-bold text-lg text-white">Let&apos;s Discuss Your Need</p>
 
           <div className="mt-6 flex justify-center">
             <a href="/contact">
@@ -231,7 +269,7 @@ const page = () => {
         >
           <Faq />
         </motion.div>
-      </motion.div>
+
     </>
   );
 };

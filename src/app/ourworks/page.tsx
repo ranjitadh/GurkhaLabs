@@ -1,19 +1,23 @@
-import React from 'react';
-import Image from 'next/image';
-import Works from '@/components/ui/Works';
-import LogoMarquee from '@/components/ui/WorkMarquee';
+import React from "react";
+import Image from "next/image";
+import Works from "@/components/ui/Works";
+import LogoMarquee from "@/components/ui/WorkMarquee";
+import QuoteHeading from "@/components/Quote/QuoteHeading";
 
 const Page = () => {
   return (
     <div className="bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen">
-
       {/* Heading */}
-      <p className="mt-8 px-4 sm:px-8 font-extrabold text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center text-center underline decoration-3 decoration-[#3498db]">
-        Some of our&nbsp;
-        <span className="text-white underline decoration-3 decoration-amber-500">
-          projects
-        </span>
-      </p>
+      <QuoteHeading
+        text={
+          <p className=" px-4 sm:px-8 font-extrabold text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center text-center underline decoration-3 decoration-[#3498db]">
+            Some of our&nbsp;
+            <span className="text-white underline decoration-4 decoration-amber-500">
+              projects
+            </span>
+          </p>
+        }
+      />
 
       {/* Animated Image */}
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-screen flex justify-center items-center my-8">
@@ -37,7 +41,6 @@ const Page = () => {
       <div className="mt-16 px-4 sm:px-8 md:px-16">
         <LogoMarquee />
       </div>
-
     </div>
   );
 };

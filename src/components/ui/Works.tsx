@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import QuoteHeading from "@/components/Quote/QuoteHeading";
 
 const ourwork = [
   {
@@ -29,7 +30,7 @@ const Works = () => {
   return (
     <div className="bg-transparent py-10 px-4 sm:px-8 text-white">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">
-        Our <span className="text-[#3498db]">Works</span>
+        <QuoteHeading text="Our Works" />
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">

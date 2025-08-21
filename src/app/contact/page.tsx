@@ -17,6 +17,7 @@ import {
 import { Toaster, toast } from "sonner";
 import Image from "next/image"
 import { div } from "framer-motion/client";
+import QuoteHeading from "@/components/Quote/QuoteHeading";
 
 const Contact = () => {
   const {
@@ -64,15 +65,18 @@ const Contact = () => {
         Got any questions?
       </motion.h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-center max-w-md text-sm sm:text-lg text-gray-200"
-      >
-        Our team is always here to help. Send us a message or directly call us
-        and we&apos;ll get back to you shortly.
-      </motion.p>
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="text-center max-w-md text-sm sm:text-lg text-gray-200 mx-auto"
+>
+  <QuoteHeading text="Our team is always here to help." className="text-lg md:text-xl mt-4" />
+  <p>
+    Send us a message or directly call us and we&apos;ll get back to you shortly.
+  </p>
+</motion.div>
+
 
       {/* Animated Button */}
       <motion.div

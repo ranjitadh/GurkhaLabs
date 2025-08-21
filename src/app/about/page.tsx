@@ -23,7 +23,7 @@ const About = () => {
         </div>
 
         <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-[#3498db] transition-all duration-300">
-          <h2 className="text-3xl font-bold text-[#3498db] mb-4">Company</h2>
+          <h2 className="text-3xl font-bold text-[#3498db] mb-4"> Company</h2>
           <p className="text-gray-300 leading-relaxed">
             <span className="font-extrabold text-[#3498db] tracking-wider">
               KhatraTech,
