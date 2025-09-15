@@ -43,13 +43,13 @@ const Navbar: React.FC = () => {
     scrolled: {
       backgroundColor: "rgba(16,48,69,0.95)",
       backdropFilter: "blur(10px)",
-      height: "56px", // smaller navbar
+      height: "64px", // Increased height for scrolled state
       boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
       transition: { duration: 0.4, ease: "easeInOut" },
     },
     top: {
       backgroundColor: "rgba(16,48,69,1)",
-      height: "72px", // taller navbar at top
+      height: "80px", // Increased height for top state
       boxShadow: "none",
       transition: { duration: 0.4, ease: "easeInOut" },
     },
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
       animate="visible"
       whileInView={scrolled ? "scrolled" : "top"}
       viewport={{ once: false }}
-      className="fixed top-0  left-0 w-full z-50"
+      className="fixed top-0 left-0 p-4 w-full z-50"
     >
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-full">
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Nav Links with staggered animation */}
           <motion.div
-            className="hidden md:flex space-x-8 font-bold text-lg ml-10"
+            className="hidden md:flex space-x-8 font-bold text-lg ml-10 items-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}

@@ -124,7 +124,7 @@ export default function RootLayout({
         {/* </VantaNetBackground> */}
 
 
-       <ChatBotWrapper />
+       {/* <ChatBotWrapper /> */}
       </body>
 
      
