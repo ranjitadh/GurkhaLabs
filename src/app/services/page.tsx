@@ -1,18 +1,34 @@
 "use client"
-import React from "react";
+import React, {useEffect,useState} from "react";
 import Image from "next/image";
 import ServiceBox from "@/components/ui/ServiceBox";
 import Marquee from "@/components/ui/WorkMarquee";
 import Workflow from "@/components/ui/flow";
 import SplitText from "@/components/animata/text/split-text";
 import { motion } from "motion/react"
+import ServiceSkeleton from "@/components/ui/Skeleton/service"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
+
+
+
 const Page = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+
+    return <ServiceSkeleton />;
+  }
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 bg-transparent text-white">

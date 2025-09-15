@@ -7,6 +7,8 @@ import Footer from "@/components/ui/Footer";
 import ChatBotWrapper from "@/components/ui/SarathiBot";
 import SkeletonLoader from "@/components/ui/skeletonloader";
 import { Suspense } from "react";
+import Home from "./page";
+import home from "@/components/ui/Skeleton/home";
 
 
 const geistSans = Geist({
@@ -116,7 +118,7 @@ export default function RootLayout({
 
         {/* <About/> */}
 
-         <Suspense fallback={<SkeletonLoader />}>{children}</Suspense>
+         <Suspense fallback={<Home />}>{children}</Suspense>
 
         <Footer />
         {/* </VantaNetBackground> */}

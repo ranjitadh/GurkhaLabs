@@ -1,10 +1,24 @@
-import React from "react";
+"use client";
+
+
+import React,{useState,useEffect} from "react";
 import Image from "next/image";
 import Works from "@/components/ui/Works";
 import LogoMarquee from "@/components/ui/WorkMarquee";
 import QuoteHeading from "@/components/Quote/QuoteHeading";
+import OurWorksSkeleton from "@/components/ui/Skeleton/our-works";
+
 
 const Page = () => {
+  const [isLoading, setIsLoading] =useState(true);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (isLoading) {
+    return <OurWorksSkeleton />;
+  }
   return (
     <div className="bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen">
       {/* Heading */}

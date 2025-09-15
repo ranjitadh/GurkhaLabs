@@ -15,6 +15,7 @@ import React from "react";
 import { ArrowBigRightDash } from "lucide-react";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import * as motion from "motion/react-client";
+import FeatureSkelton from "@/components/ui/Skeleton/features";
 
 // Animation variants
 const fadeInUp = {
@@ -36,6 +37,15 @@ const fadeInRight = {
 };
 
 const Page = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+  
+  React.useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (isLoading) {
+    return <FeatureSkelton />;
+  }
   return (
     <div className="bg-transparent text-white w-full overflow-hidden">
       {/* Hero Section */}
@@ -122,7 +132,7 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
+        className="flex flex-col md:flex-row items-center justify-center py-16 px-36 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
       >
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold">

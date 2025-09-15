@@ -1,12 +1,24 @@
 "use client";
-import React from "react";
+import React, { useEffect,useState } from "react";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import Faq from "@/components/ui/Faq";
 import Teams from "@/components/ui/Teams";
 import TestiMonials from "@/components/ui/TestiMonials";
 import Image from "next/image";
+import AboutSkeleton from "@/components/ui/Skeleton/about";
 
 const About = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <AboutSkeleton />;
+  }
   return (
     <div className="bg-gradient-to-br via-gray-900 from-[#103045] to-black  text-white overflow-hidden">
 

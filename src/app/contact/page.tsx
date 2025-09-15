@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Faq from "@/components/ui/Faq";
 import MapEmbed from "@/components/ui/MapEmbed";
@@ -18,6 +18,7 @@ import { Toaster, toast } from "sonner";
 import Image from "next/image"
 import { div } from "framer-motion/client";
 import QuoteHeading from "@/components/Quote/QuoteHeading";
+import ContactSkeleton from "@/components/ui/Skeleton/contact";
 
 const Contact = () => {
   const {
@@ -49,6 +50,18 @@ const Contact = () => {
       console.error(err);
     }
   };
+
+
+  const[isLoading,setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (isLoading) {
+    return <ContactSkeleton />;
+  }
+
+  
 
   return (
     <div className="relative bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen flex flex-col items-center p-6 space-y-10 text-white font-bold overflow-hidden">
