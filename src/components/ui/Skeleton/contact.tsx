@@ -4,7 +4,7 @@ import React from "react";
 const ContactSkeleton = () => {
   return (
     <>
-  <div className="bg-gradient-to-br from-[#103045] via-gray-800 to-black min-h-screen">
+  <div className="relative bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen items-center justify-center p-6 space-y-8 text-white font-bold overflow-hidden">
       {/* Heading Skeleton */}
       <div className="px-4 sm:px-8 py-8 flex justify-center items-center">
         <div className="h-10 sm:h-12 md:h-14 w-3/4 max-w-[600px] bg-gray-700 rounded animate-pulse"></div>
