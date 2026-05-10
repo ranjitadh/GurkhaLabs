@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import VantaNetBackground from "@/components/ui/Vantabg";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import ChatBotWrapper from "@/components/ui/SarathiBot";
 import SkeletonLoader from "@/components/ui/skeletonloader";
+import dynamic from 'next/dynamic';
 import { Suspense } from "react";
-import Home from "./page";
-import home from "@/components/ui/Skeleton/home";
+
+const ChatBotWrapper = dynamic(() => import("@/components/ui/SarathiBot"));
 
 
 const geistSans = Geist({
@@ -111,20 +110,15 @@ export default function RootLayout({
       <body
         // {/* remove black after using vantajs and use bg-transparent*/}
 
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black pt-20`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black`}
       >
-        {/* <VantaNetBackground options={{mouseControls:true,touchControls:true}}> */}
         <Navbar />
 
         {/* <About/> */}
 
-         <Suspense fallback={<Home />}>{children}</Suspense>
-
-        <Footer />
-        {/* </VantaNetBackground> */}
-
-
-       {/* <ChatBotWrapper /> */}
+         <Suspense fallback={<SkeletonLoader />}>{children}</Suspense>
+          <Footer />
+          <ChatBotWrapper />
       </body>
 
      

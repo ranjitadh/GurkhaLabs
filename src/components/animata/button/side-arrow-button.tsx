@@ -14,7 +14,7 @@ export default function SlideArrowButton({
 }: SlideArrowButtonProps) {
   return (
     <button
-      className={`group relative rounded-full border border-white bg-white p-2 text-xl font-semibold ${className}`}
+      className={`group relative rounded-full bg-white p-2 text-xl font-semibold ${className}`}
       {...props}
     >
       <div

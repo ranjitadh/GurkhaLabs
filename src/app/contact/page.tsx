@@ -1,11 +1,13 @@
 "use client";
 
-import React,{useState,useEffect} from "react";
+import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import Faq from "@/components/ui/Faq";
 import MapEmbed from "@/components/ui/MapEmbed";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import { motion } from "framer-motion";
+
+const Faq = dynamic(() => import("@/components/ui/Faq"), { ssr: false });
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -51,20 +53,9 @@ const Contact = () => {
     }
   };
 
-
-  const[isLoading,setIsLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-  if (isLoading) {
-    return <ContactSkeleton />;
-  }
-
-  
-
   return (
-    <div className="relative bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen flex flex-col items-center p-6 space-y-10 text-white font-bold overflow-hidden">
+    <Suspense fallback={<ContactSkeleton />}>
+      <div className="relative bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen flex flex-col items-center p-6 space-y-10 text-white font-bold overflow-hidden pt-24">
  <Toaster position="top-center" />
      
 
@@ -264,6 +255,7 @@ const Contact = () => {
         <Faq />
       </motion.div>
     </div>
+    </Suspense>
   );
 };
 

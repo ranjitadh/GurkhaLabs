@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect,useState} from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import ServiceBox from "@/components/ui/ServiceBox";
 import Marquee from "@/components/ui/WorkMarquee";
@@ -17,21 +17,9 @@ const fadeInUp = {
 
 
 const Page = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-
-    return <ServiceSkeleton />;
-  }
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-transparent text-white">
+    <Suspense fallback={<ServiceSkeleton />}>
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-transparent text-white pt-24">
         <motion.div
           className="flex flex-col justify-center p-6 sm:p-12 md:p-20 lg:p-28"
           initial="hidden"
@@ -110,7 +98,7 @@ const Page = () => {
       >
 
       </motion.div>
-    </>
+    </Suspense>
   );
 };
 

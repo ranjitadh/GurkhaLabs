@@ -1,50 +1,44 @@
 "use client";
 import React from "react";
-import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { FaLinkedin, FaFacebook, FaInstagram, FaUserCircle } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 
 const Member = [
   {
-    name: "Aayush Pandeya",
-    photo: "/assets/Images/aayush.jpg",
+    name: "Mr CEO",
     role: "CEO",
-    linkedin: "https://www.linkedin.com/in/aayush-pandeya-51a7352b3/",
-    facebook: "https://www.facebook.com/aayush.pandeya.77",
-    instagram: "https://www.instagram.com/aayush_pandeya/",
-  },
-
-  {
-    name: "Aayush Pandeya",
-    photo: "/assets/Images/aayush.jpg",
-    role: "CEO",
-    linkedin: "https://www.linkedin.com/in/aayush-pandeya-51a7352b3/",
-    facebook: "https://www.facebook.com/aayush.pandeya.77",
-    instagram: "https://www.instagram.com/aayush_pandeya/",
+    linkedin: "#",
+    facebook: "#",
+    instagram: "#",
   },
   {
-    name: "Aayush Pandeya",
-    photo: "/assets/Images/aayush.jpg",
+    name: "Mr CEO",
     role: "CEO",
-    linkedin: "https://www.linkedin.com/in/aayush-pandeya-51a7352b3/",
-    facebook: "https://www.facebook.com/aayush.pandeya.77",
-    instagram: "https://www.instagram.com/aayush_pandeya/",
+    linkedin: "#",
+    facebook: "#",
+    instagram: "#",
   },
   {
-    name: "Aayush Pandeya",
-    photo: "/assets/Images/aayush.jpg",
+    name: "Mr CEO",
     role: "CEO",
-    linkedin: "https://www.linkedin.com/in/aayush-pandeya-51a7352b3/",
-    facebook: "https://www.facebook.com/aayush.pandeya.77",
-    instagram: "https://www.instagram.com/aayush_pandeya/",
+    linkedin: "#",
+    facebook: "#",
+    instagram: "#",
   },
   {
-    name: "Aayush Pandeya",
-    photo: "/assets/Images/aayush.jpg",
+    name: "Mr CEO",
     role: "CEO",
-    linkedin: "https://www.linkedin.com/in/aayush-pandeya-51a7352b3/",
-    facebook: "https://www.facebook.com/aayush.pandeya.77",
-    instagram: "https://www.instagram.com/aayush_pandeya/",
+    linkedin: "#",
+    facebook: "#",
+    instagram: "#",
+  },
+  {
+    name: "Mr CEO",
+    role: "CEO",
+    linkedin: "#",
+    facebook: "#",
+    instagram: "#",
   },
 ];
 
@@ -55,28 +49,25 @@ const Teams = () => {
         Check out our amazing <span className="text-[#3498db]">team</span>
       </h1>
 
-      <div className="w-full overflow-visible">
+      <div className="w-full overflow-visible py-20">
         <Marquee
           speed={60}
-         
           pauseOnHover={true}
           direction="right" 
         >
-          {[...Member, ...Member].map((member, index) => (
-            <div
+          {Member.map((member, index) => (
+            <motion.div
               key={index}
+              initial={{ opacity: 0, scale: 0.8, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col items-center text-center p-6 rounded-xl 
                 backdrop-blur-md bg-white/10 border border-white/20 shadow-xl 
-                transition-transform transform hover:scale-90 duration-300 w-80 mx-6"
+              transition-all transform hover:scale-105 hover:border-[#3498db]/50 hover:shadow-[0_0_20px_rgba(52,152,219,0.3)] duration-300 w-72 mx-10"
             >
-              <div className="overflow-hidden mb-4 rounded-full w-32 h-32">
-                <Image
-                  width={128}
-                  height={128}
-                  src={member.photo}
-                  alt={member.name}
-                  className="w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-105"
-                />
+              <div className="mb-4 flex items-center justify-center">
+                <FaUserCircle className="w-32 h-32 text-gray-300 transition-transform duration-500 hover:scale-105" />
               </div>
 
               <h2 className="text-xl font-semibold mb-1">{member.name}</h2>
@@ -93,7 +84,7 @@ const Teams = () => {
                   <FaInstagram className="text-pink-500 hover:text-pink-400 transition duration-300 text-2xl" />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </Marquee>
       </div>

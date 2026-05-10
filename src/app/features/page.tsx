@@ -1,5 +1,6 @@
 "use client";
 
+import React, { Suspense } from "react";
 import Workflow from "../../components/ui/flow";
 import Image from "next/image";
 import {
@@ -11,10 +12,10 @@ import {
 import { BiLogoPlayStore } from "react-icons/bi";
 import { GiProcessor } from "react-icons/gi";
 import Link from "next/link";
-import React from "react";
 import { ArrowBigRightDash } from "lucide-react";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import * as motion from "motion/react-client";
+import { motion as framerMotion } from "framer-motion";
 import FeatureSkelton from "@/components/ui/Skeleton/features";
 
 // Animation variants
@@ -37,17 +38,9 @@ const fadeInRight = {
 };
 
 const Page = () => {
-  const [isLoading, setIsLoading] = React.useState(true);
-  
-  React.useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-  if (isLoading) {
-    return <FeatureSkelton />;
-  }
   return (
-    <div className="bg-transparent text-white w-full overflow-hidden">
+    <Suspense fallback={<FeatureSkelton />}>
+      <div className="bg-transparent text-white w-full overflow-hidden pt-24">
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row w-full">
         <motion.div
@@ -194,6 +187,7 @@ const Page = () => {
         </div>
       </motion.div>
     </div>
+    </Suspense>
   );
 };
 

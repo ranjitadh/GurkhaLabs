@@ -1,31 +1,23 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
-import Teams from '@/components/ui/Teams';
-import TestiMonials from '@/components/ui/TestiMonials';
-import Faq from '@/components/ui/Faq';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import { Laptop } from 'lucide-react';
 import Image from 'next/image';
-import FlipCard from '@/components/animata/container/Flipcard';
 import { FaFigma, FaAppStoreIos } from 'react-icons/fa';
-import SwipeButton from '@/components/animata/button/swipe-button';
-import JumpingTextInstagram from '@/components/animata/text/staggered-letter';
 import { motion } from 'framer-motion';
 import QuoteHeading from '@/components/Quote/QuoteHeading';
 import HomeSkeleton from '@/components/ui/Skeleton/home';
 
-// Simulate async data fetch
-async function fetchData() {
-  await new Promise((resolve) => setTimeout(resolve, 3000)); // 3-second delay
-  return true;
-}
+// Dynamic imports for heavy components
+const Teams = dynamic(() => import('@/components/ui/Teams'), { ssr: false });
+const TestiMonials = dynamic(() => import('@/components/ui/TestiMonials'), { ssr: false });
+const Faq = dynamic(() => import('@/components/ui/Faq'), { ssr: false });
+const FlipCard = dynamic(() => import('@/components/animata/container/Flipcard'), { ssr: false });
+const SwipeButton = dynamic(() => import('@/components/animata/button/swipe-button'), { ssr: false });
+const StaggeredLetter = dynamic(() => import('@/components/animata/text/staggered-letter'), { ssr: false });
 
 export default function Page() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    fetchData().then(() => setIsLoaded(true));
-  }, []);
 
   const sections = [
     {
@@ -62,12 +54,10 @@ export default function Page() {
     },
   ];
 
-  if (!isLoaded) {
-    return <HomeSkeleton />;
-  }
 
   return (
     <Suspense fallback={<HomeSkeleton />}>
+      <div className="pt-20" />
       {/* Hero Section */}
       <motion.div
         suppressHydrationWarning
@@ -80,38 +70,49 @@ export default function Page() {
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left gap-4">
           <QuoteHeading
             text={
-              <JumpingTextInstagram
+              <StaggeredLetter
                 text="Service"
                 className="text-9xl sm:text-6xl lg:text-7xl"
               />
             }
           />
-          <JumpingTextInstagram
+          <StaggeredLetter
             text="That Sparks"
             className="text-9xl sm:text-6xl lg:text-7xl"
           />
-          <JumpingTextInstagram
+          <StaggeredLetter
             text="Growth"
             className="text-9xl sm:text-6xl lg:text-7xl"
           />
         </div>
-        {/* Right Column: Image */}
-        <div className="flex justify-center md:justify-end">
+        {/* Right Column: Image with floating animation */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="flex justify-center md:justify-end"
+        >
           <Image
             src="/assets/SVG/data-extraction-animate.svg"
             alt="computer AI"
             height={1000}
             width={1000}
-            className="max-w-full h-auto"
+            priority
+            className="max-w-full h-auto drop-shadow-2xl"
           />
-        </div>
+        </motion.div>
       </motion.div>
 
-      {/* Our Services */}
       <motion.h1
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, type: "spring" }}
         className="mt-20 flex items-center justify-center gap-3 text-white text-3xl md:text-5xl font-bold underline decoration-4 decoration-[#3498db]"
       >
         <QuoteHeading
@@ -168,38 +169,58 @@ export default function Page() {
         ].map((service, index) => (
           <motion.div
             key={index}
-            className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="flex items-center space-x-2 cursor-pointer hover:text-[#3498db] group transition-colors duration-300"
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            whileHover={{ scale: 1.05, x: 10 }}
           >
-            {service.icon}
-            <span>{service.label}</span>
+            <div className="group-hover:rotate-12 transition-transform duration-300">
+              {service.icon}
+            </div>
+            <span className="group-hover:tracking-wider transition-all duration-300">{service.label}</span>
           </motion.div>
         ))}
       </motion.div>
 
       {/* Enhance Productivity Section */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8 }}
         className="bg-transparent text-white px-4 py-16 text-4xl"
       >
         <QuoteHeading text="Enhance your" />
         <p className="text-2xl sm:text-4xl font-bold text-center mb-6">
-          <span className="underline decoration-[#3294db]">productivity</span> with our expert solutions.
+          <motion.span 
+            animate={{ color: ["#fff", "#3294db", "#fff"] }}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="underline decoration-[#3294db]"
+          >
+            productivity
+          </motion.span> with our expert solutions.
         </p>
       </motion.div>
 
-      {/* Flip Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-6 mt-12 px-6">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          visible: { transition: { staggerChildren: 0.2 } }
+        }}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-6 mt-12 px-6"
+      >
         {sections.map((section, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.6 }}
           >
             <FlipCard
               image={section.image}
@@ -207,11 +228,11 @@ export default function Page() {
               subtitle={section.subtitle}
               description={section.content}
               rotate="y"
-              className="h-60 w-full max-w-md mx-auto"
+              className="h-60 w-full max-w-md mx-auto hover:shadow-[0_0_30px_rgba(52,152,219,0.5)] transition-shadow duration-500"
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* CTA Section */}
       <motion.div
@@ -243,45 +264,6 @@ export default function Page() {
         </div>
       </motion.div>
 
-      {/* Additional Sections */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="mt-16"
-      >
-        <Suspense
-          fallback={<div className="h-48 w-full bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />}
-        >
-          <Teams />
-        </Suspense>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="mt-16"
-      >
-        <Suspense
-          fallback={<div className="h-48 w-full bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />}
-        >
-          <TestiMonials />
-        </Suspense>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-16"
-      >
-        <Suspense
-          fallback={<div className="h-48 w-full bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />}
-        >
-          <Faq />
-        </Suspense>
-      </motion.div>
     </Suspense>
   );
 }

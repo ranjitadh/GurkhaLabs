@@ -41,15 +41,15 @@ const Navbar: React.FC = () => {
       transition: { type: "spring", stiffness: 80, damping: 15 },
     },
     scrolled: {
-      backgroundColor: "rgba(16,48,69,0.95)",
+      backgroundColor: "transparent",
       backdropFilter: "blur(10px)",
-      height: "64px", // Increased height for scrolled state
-      boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+      height: "64px",
+      boxShadow: "none",
       transition: { duration: 0.4, ease: "easeInOut" },
     },
     top: {
-      backgroundColor: "rgba(16,48,69,1)",
-      height: "80px", // Increased height for top state
+      backgroundColor: "transparent",
+      height: "80px",
       boxShadow: "none",
       transition: { duration: 0.4, ease: "easeInOut" },
     },
@@ -77,6 +77,7 @@ const Navbar: React.FC = () => {
               alt="Company Logo"
               width={120}
               height={80}
+              priority
               className="object-contain"
             />
           </motion.div>
@@ -98,10 +99,10 @@ const Navbar: React.FC = () => {
                 <Link
                   href={link.href}
                   className={clsx(
-                    "text-gray-100 hover:text-[#3498db] border-b-2 px-1 transition duration-300",
+                    "text-gray-100 hover:text-[#3498db] px-1 transition duration-300",
                     pathname === link.href
-                      ? "border-[#3498db] text-[#3498db]"
-                      : "border-transparent"
+                      ? "text-[#3498db]"
+                      : ""
                   )}
                 >
                   {link.name}
@@ -162,7 +163,7 @@ const Navbar: React.FC = () => {
             ))}
 
             <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              <button className="mt-4 w-full border border-white bg-transparent text-white hover:border-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300">
+              <button className="mt-4 w-full bg-white text-black hover:bg-[#3498db] hover:text-white font-bold py-2 px-4 rounded-full transition duration-300">
                 Get in Touch
               </button>
             </Link>
