@@ -23,8 +23,8 @@ export default function ChatBotWrapper() {
 
           {/* ChatBot Component */}
           <ChatBot
-            companyName="Khatra Tech"
-            logo="/assets/Images/khatra tech color white.svg"
+            companyName="GurkhasLabs"
+            logo="/assets/Images/gurkhaslabs_logo.svg"
             theme={{
               primary: "#103045",
               secondary: "#f5f7fa",

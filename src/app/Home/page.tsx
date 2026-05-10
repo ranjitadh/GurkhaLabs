@@ -72,17 +72,17 @@ export default function Page() {
             text={
               <StaggeredLetter
                 text="Service"
-                className="text-9xl sm:text-6xl lg:text-7xl"
+                className="text-5xl sm:text-6xl lg:text-7xl"
               />
             }
           />
           <StaggeredLetter
             text="That Sparks"
-            className="text-9xl sm:text-6xl lg:text-7xl"
+            className="text-5xl sm:text-6xl lg:text-7xl"
           />
           <StaggeredLetter
             text="Growth"
-            className="text-9xl sm:text-6xl lg:text-7xl"
+            className="text-5xl sm:text-6xl lg:text-7xl"
           />
         </div>
         {/* Right Column: Image with floating animation */}
@@ -228,7 +228,7 @@ export default function Page() {
               subtitle={section.subtitle}
               description={section.content}
               rotate="y"
-              className="h-60 w-full max-w-md mx-auto hover:shadow-[0_0_30px_rgba(52,152,219,0.5)] transition-shadow duration-500"
+              className="h-60 w-full max-w-[320px] sm:max-w-md mx-auto hover:shadow-[0_0_30px_rgba(52,152,219,0.5)] transition-shadow duration-500"
             />
           </motion.div>
         ))}

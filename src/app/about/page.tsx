@@ -41,7 +41,7 @@ const About = () => {
           <QuoteHeading text="Our Company" className="text-3xl font-bold text-[#3498db] mb-4" />
           <p className="text-gray-300 leading-relaxed">
             <span className="font-extrabold text-[#3498db] tracking-wider">
-              KhatraTech,
+              GurkhasLabs,
             </span>{" "}
             where innovation meets excellence. Founded with a passion for
             technology and a commitment to quality. We specialize in providing
@@ -112,7 +112,7 @@ const About = () => {
             understanding of our clients&apos; goals. By staying ahead of industry
             trends and continually improving our skills, we ensure our clients
             receive the best possible solutions to achieve their business
-            objectives. At KhatraTech, we are committed to making technology work
+            objectives. At GurkhasLabs, we are committed to making technology work
             for you.
           </p>
         </div>

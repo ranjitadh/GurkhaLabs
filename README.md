@@ -1,6 +1,6 @@
-# 🚀 KhatraTech Website – Redesign 2025
+# 🚀 GurkhasLabs Website – Redesign 2025
 
-The official source code for the redesigned [KhatraTech](https://khatratech.com) website. Built with the **Next.js App Router**, styled using **Tailwind CSS**, written in **TypeScript**, and backed by **PostgreSQL** with **Prisma ORM**. Implements **JWT-based authentication**, responsive UI, modern design principles, and SEO best practices.
+The official source code for the redesigned [GurkhasLabs](https://gurkhaslabs.com) website. Built with the **Next.js App Router**, styled using **Tailwind CSS**, written in **TypeScript**, and backed by **PostgreSQL** with **Prisma ORM**. Implements **JWT-based authentication**, responsive UI, modern design principles, and SEO best practices.
 
 ---
 
@@ -53,8 +53,8 @@ The official source code for the redesigned [KhatraTech](https://khatratech.com)
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/Khatra-Tech-Pvt-Ltd/khatratech.git
-cd khatratech
+git clone https://github.com/ranjitadh/GurkhaLabs.git
+cd gurkhaslabs
 npm install
 ````
 
@@ -63,7 +63,7 @@ npm install
 Create a `.env` file based on `.env.example`:
 
 ```env
-DATABASE_URL=postgresql://user:password@localhost:5432/khatratech
+DATABASE_URL=postgresql://user:password@localhost:5432/gurkhaslabs
 JWT_SECRET=your-strong-secret
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
@@ -123,10 +123,10 @@ Access the site at `http://localhost:3000`.
 ```ts
 // app/page.tsx
 export const metadata = {
-  title: "KhatraTech – Transform Tech, Inspiring Solutions",
+  title: "GurkhasLabs – Transform Tech, Inspiring Solutions",
   description: "We provide web, app, branding & IT consulting services in Nepal.",
   openGraph: {
-    title: "KhatraTech",
+    title: "GurkhasLabs",
     images: ["/og-image.jpg"],
   },
 };
@@ -139,11 +139,11 @@ export const metadata = {
 {JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "KhatraTech",
-  url: "https://khatratech.com",
+  name: "GurkhasLabs",
+  url: "https://gurkhaslabs.com",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+977-9705970533",
+    telephone: "+977-9748723044",
     contactType: "Customer Service",
   },
 })}
@@ -201,18 +201,18 @@ Alternatively, use Vercel for deployment.
 
 ## 📬 Contact
 
-📧 Email: [info@khatratech.com](mailto:info@khatratech.com)
+📧 Email: [info@gurkhaslabs.com](mailto:info@gurkhaslabs.com)
 
-🌐 Website: [https://khatratech.com](https://khatratech.com)
+🌐 Website: [https://gurkhaslabs.com](https://gurkhaslabs.com)
 
-📞 Phone: +977-9705970533
+📞 Phone: +977-9748723044
 
-🏢 Address: Sankhamul Planning Cross 6,Lalitpur, Bagmati Province, Nepal
+🏢 Address: Satdobato, Lalitpur, Bagmati Province, Nepal
 
 ---
 
 ## ⚖️ License
 
-This project is proprietary to **KhatraTech Pvt. Ltd.**. Redistribution or reuse without written permission is prohibited.
+This project is proprietary to **GurkhasLabs Pvt. Ltd.**. Redistribution or reuse without written permission is prohibited.
 
 ---

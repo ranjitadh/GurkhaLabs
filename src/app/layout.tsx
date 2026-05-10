@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 //need to update
 
 export const metadata: Metadata = {
-  title: "KhatraTech",
+  title: "GurkhasLabs",
  keywords :[
 
 
@@ -96,8 +96,8 @@ export const metadata: Metadata = {
   "digital marketing Kathmandu",
 ],
 
-  description: "KhatraTech offers innovative web design, web development, website development,graphics design, UI/UX, app development, digital marketing, and IT consulting services tailored for your business success.",
-  metadataBase: new URL("https://www.khatratech.com"),
+  description: "GurkhasLabs offers innovative web design, web development, website development,graphics design, UI/UX, app development, digital marketing, and IT consulting services tailored for your business success.",
+  metadataBase: new URL("https://www.gurkhaslabs.com"),
 };
 
 export default function RootLayout({

@@ -80,15 +80,15 @@ const Footer = () => {
             <p className="mb-2 flex items-center ml-10">
               <Phone className="mr-2 h-5 w-5" />
               <a
-                href="tel:+9779705970533"
+                href="tel:+9779748723044"
                 className="hover:text-gray-400 transition-colors"
               >
-                +977 9705970533
+                +977 9748723044
               </a>
             </p>
             <p className="mb-2 flex items-center ml-10">
               <MapPin className="mr-2 h-5 w-5" />
-              Sankhamul, Lalitpur, Nepal
+              Satdobato, Lalitpur, Nepal
             </p>
           </div>
         </div>
@@ -96,10 +96,10 @@ const Footer = () => {
         {/* Logo Section */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/assets/Images/khatra tech color white.svg"
-            height={200}
-            width={200}
-            alt="KhatraTech Logo"
+            src="/assets/Images/gurkhaslabs_logo.svg"
+            height={100}
+            width={100}
+            alt="GurkhasLabs Logo"
             className="object-contain"
           />
         </div>
@@ -118,21 +118,21 @@ const Footer = () => {
           {/* Socials */}
           <div className="flex justify-center space-x-6 mb-4">
             <a
-              href="https://x.com/KhatraTech"
+              href="https://x.com/GurkhasLabs"
               className="hover:text-gray-400 transition-colors"
               aria-label="Twitter"
             >
               <FaTwitter className="h-6 w-6" />
             </a>
             <a
-              href="https://np.linkedin.com/company/khatra-tech"
+              href="https://np.linkedin.com/company/gurkhaslabs"
               className="hover:text-gray-400 transition-colors"
               aria-label="LinkedIn"
             >
               <FaLinkedin className="h-6 w-6" />
             </a>
             <a
-              href="https://www.instagram.com/khatratech/"
+              href="https://www.instagram.com/gurkhaslabs/"
               className="hover:text-gray-400 transition-colors"
               aria-label="Instagram"
             >
@@ -142,7 +142,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-gray-400">
-            © {currentDate.getFullYear()} KhatraTech. All rights reserved.
+            © {currentDate.getFullYear()} GurkhasLabs. All rights reserved.
           </p>
         </div>
       </div>

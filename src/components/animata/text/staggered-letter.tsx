@@ -21,23 +21,21 @@ export default function StaggeredLetter({
   className,
   ...props
 }: DropLetterProps) {
-  const common = "text-7xl font-bold ";
+  const common = "font-bold ";
   return (
     <div
       className={cn(
-        "  items-center justify-center ",
+        "flex items-center justify-center",
         className,
       )}
       {...props}
     >
-      {applyMask && <div className={cn(common, " flex justify-center items-center absolute text-gray-300")}>{text}</div>}
+      {applyMask && <div className={cn(common, "flex justify-center items-center absolute text-gray-300", className)}>{text}</div>}
       <div className="flex justify-center items-center">
         {text.split("").map((e, index) => (
           <motion.div
-         
-             key={index}
-          
-            className={common}
+            key={index}
+            className={cn(common, className)}
             initial={{ opacity: 0, y: direction === "up" ? 150 : -150 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{

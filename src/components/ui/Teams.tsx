@@ -6,36 +6,22 @@ import Marquee from "react-fast-marquee";
 
 const Member = [
   {
-    name: "Mr CEO",
-    role: "CEO",
+    name: "Ranjit Adhikari",
+    role: "Co-Founder",
     linkedin: "#",
     facebook: "#",
     instagram: "#",
   },
   {
-    name: "Mr CEO",
-    role: "CEO",
+    name: "Hirdaya Raj Lamsal",
+    role: "Co-Founder",
     linkedin: "#",
     facebook: "#",
     instagram: "#",
   },
   {
-    name: "Mr CEO",
-    role: "CEO",
-    linkedin: "#",
-    facebook: "#",
-    instagram: "#",
-  },
-  {
-    name: "Mr CEO",
-    role: "CEO",
-    linkedin: "#",
-    facebook: "#",
-    instagram: "#",
-  },
-  {
-    name: "Mr CEO",
-    role: "CEO",
+    name: "Shubhasish Khanal",
+    role: "Co-Founder",
     linkedin: "#",
     facebook: "#",
     instagram: "#",

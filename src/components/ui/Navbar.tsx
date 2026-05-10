@@ -73,10 +73,10 @@ const Navbar: React.FC = () => {
             className="flex-shrink-0 flex items-center"
           >
             <Image
-              src="/assets/Images/khatra tech color white.png"
+              src="/assets/Images/gurkhaslabs_logo.svg"
               alt="Company Logo"
-              width={120}
-              height={80}
+              width={48}
+              height={48}
               priority
               className="object-contain"
             />
