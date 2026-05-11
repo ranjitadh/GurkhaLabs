@@ -18,7 +18,6 @@ import {
 } from "@/types/contact";
 import { Toaster, toast } from "sonner";
 import Image from "next/image"
-import { div } from "framer-motion/client";
 import QuoteHeading from "@/components/Quote/QuoteHeading";
 import ContactSkeleton from "@/components/ui/Skeleton/contact";
 
@@ -44,7 +43,7 @@ const Contact = () => {
         toast.success("Message sent successfully!");
         reset();
       } else {
-        const { error } = await res.json();
+        await res.json();
         toast.error("Unable to send message, please try again later.");
       }
     } catch (err) {

@@ -15,7 +15,6 @@ import Link from "next/link";
 import { ArrowBigRightDash } from "lucide-react";
 import SwipeButton from "@/components/animata/button/swipe-button";
 import * as motion from "motion/react-client";
-import { motion as framerMotion } from "framer-motion";
 import FeatureSkelton from "@/components/ui/Skeleton/features";
 
 // Animation variants
