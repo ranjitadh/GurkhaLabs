@@ -51,10 +51,10 @@ const services: Service[] = [
 
 const ServiceBox: React.FC = () => {
   return (
-    <section className="bg-transparent text-white py-10 sm:py-16">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 underline decoration-[#3294db] animate-(--animate-fade-in-down)">
+    <section className="bg-transparent text-gray-900 py-10 sm:py-16">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 underline decoration-[#3294db]">
         We Offer Awesome{" "}
-        <span className="text-[#3498db] underline decoration-amber-50">
+        <span className="text-[#3498db]">
           Services
         </span>
       </h2>
@@ -82,7 +82,7 @@ const ServiceBox: React.FC = () => {
                   description={svc.description}
               
                   rotate="y"
-                  className="w-[600px] h-[400px] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                  className="w-[600px] h-[400px] rounded-lg shadow-xl hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
@@ -91,7 +91,7 @@ const ServiceBox: React.FC = () => {
                 <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold text-[#3498db] mb-4 ${slideAnim} transition duration-500`}>
                   {svc.title}
                 </h3>
-                <p className={`${slideAnim} transition duration-500 delay-100 text-sm sm:text-base text-gray-300 leading-relaxed`}>
+                <p className={`${slideAnim} transition duration-500 delay-100 text-sm sm:text-base text-gray-700 font-medium leading-relaxed`}>
                   {svc.description}
                 </p>
               </div>

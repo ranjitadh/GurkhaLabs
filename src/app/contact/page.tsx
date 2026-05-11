@@ -54,7 +54,8 @@ const Contact = () => {
 
   return (
     <Suspense fallback={<ContactSkeleton />}>
-      <div className="relative bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen flex flex-col items-center p-6 space-y-10 text-white font-bold overflow-hidden pt-24">
+    <Suspense fallback={<ContactSkeleton />}>
+      <div className="relative bg-transparent min-h-screen flex flex-col items-center p-6 space-y-10 text-gray-900 font-bold overflow-hidden pt-24">
         <Toaster position="top-center" />
 
 
@@ -63,7 +64,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl md:text-5xl text-center"
+          className="text-3xl sm:text-4xl md:text-5xl text-center text-gray-900"
         >
           Got any questions?
         </motion.h1>
@@ -72,10 +73,10 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center max-w-md text-sm sm:text-lg text-gray-200 mx-auto"
+          className="text-center max-w-md text-sm sm:text-lg text-gray-700 mx-auto"
         >
-          <QuoteHeading text="Our team is always here to help." className="text-lg md:text-xl mt-4" />
-          <p>
+          <QuoteHeading text="Our team is always here to help." className="text-lg md:text-xl mt-4 text-gray-900" />
+          <p className="font-medium">
             Send us a message or directly call us and we&apos;ll get back to you shortly.
           </p>
         </motion.div>
@@ -90,9 +91,9 @@ const Contact = () => {
         >
           <SwipeButton
             className="cursor-pointer"
-            firstClass="bg-white text-black px-8 py-3 font-bold shadow-lg"
+            firstClass="bg-[#103045] text-white px-8 py-3 font-bold shadow-lg"
             firstText="Contact us"
-            secondClass="bg-transparent text-white border px-8 py-3 font-bold  transition-all duration-300"
+            secondClass="bg-white text-[#103045] border border-[#103045] px-8 py-3 font-bold transition-all duration-300"
             secondText="Contact us"
           />
         </motion.div>
@@ -104,20 +105,20 @@ const Contact = () => {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="flex flex-col space-y-4 bg-white/5 p-6 rounded-3xl backdrop-blur-md shadow-xl"
+            className="flex flex-col space-y-4 bg-white/60 p-6 rounded-3xl backdrop-blur-md shadow-xl border border-gray-100"
           >
             <input
               type="text"
               placeholder="Name"
               {...register("name")}
-              className="border border-white/50 bg-transparent text-white hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg placeholder:text-gray-300 transition-all"
+              className="border border-gray-200 bg-white text-gray-900 hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg placeholder:text-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-[#3498db]/20"
             />
-            {errors.name && <p className="text-red-400 text-sm">{errors.name.message}</p>}
+            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
 
             <select
               {...register("inquryType")}
               defaultValue=""
-              className="border border-white/50 bg-transparent text-white hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg transition-all"
+              className="border border-gray-200 bg-white text-gray-900 hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg transition-all focus:outline-none focus:ring-2 focus:ring-[#3498db]/20"
             >
               <option value="" disabled hidden>
                 Inquiry type
@@ -128,12 +129,12 @@ const Contact = () => {
                 </option>
               ))}
             </select>
-            {errors.inquryType && <p className="text-red-400 text-sm">{errors.inquryType.message}</p>}
+            {errors.inquryType && <p className="text-red-500 text-sm">{errors.inquryType.message}</p>}
 
             <select
               {...register("serviceRequired")}
               defaultValue=""
-              className="border border-white/50 bg-transparent text-white hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg transition-all"
+              className="border border-gray-200 bg-white text-gray-900 hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg transition-all focus:outline-none focus:ring-2 focus:ring-[#3498db]/20"
             >
               <option value="" disabled hidden>
                 Service Required
@@ -144,27 +145,27 @@ const Contact = () => {
                 </option>
               ))}
             </select>
-            {errors.serviceRequired && <p className="text-red-400 text-sm">{errors.serviceRequired.message}</p>}
+            {errors.serviceRequired && <p className="text-red-500 text-sm">{errors.serviceRequired.message}</p>}
 
             <input
               type="email"
               placeholder="Email"
               {...register("email")}
-              className="border border-white/50 bg-transparent text-white hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg placeholder:text-gray-300 transition-all"
+              className="border border-gray-200 bg-white text-gray-900 hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg placeholder:text-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-[#3498db]/20"
             />
-            {errors.email && <p className="text-red-400 text-sm">{errors.email.message}</p>}
+            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
             <textarea
               placeholder="Message"
               {...register("message")}
-              className="border border-white/50 bg-transparent text-white hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg placeholder:text-gray-300 min-h-[120px] transition-all"
+              className="border border-gray-200 bg-white text-gray-900 hover:border-[#3498db] font-semibold py-3 px-4 rounded-2xl text-sm sm:text-lg placeholder:text-gray-400 min-h-[120px] transition-all focus:outline-none focus:ring-2 focus:ring-[#3498db]/20"
             />
-            {errors.message && <p className="text-red-400 text-sm">{errors.message.message}</p>}
+            {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="border border-white bg-transparent text-white hover:bg-white hover:text-black font-bold py-3 px-6 rounded-2xl transition-all duration-300"
+              className="bg-[#103045] text-white hover:bg-[#3498db] font-bold py-3 px-6 rounded-2xl transition-all duration-300 shadow-lg"
             >
               {isSubmitting ? "Sending..." : "Send"}
             </button>
@@ -194,15 +195,15 @@ const Contact = () => {
               className="object-contain"
             />
             {[{
-              icon: <Phone className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
+              icon: <Phone className="text-3xl sm:text-4xl text-[#3498db] hover:scale-110 transition-transform cursor-pointer" />,
               title: "Phone",
               value: "+977-9748723044"
             }, {
-              icon: <Mail className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
+              icon: <Mail className="text-3xl sm:text-4xl text-[#3498db] hover:scale-110 transition-transform cursor-pointer" />,
               title: "Email",
               value: "info@gurkhaslabs.com"
             }, {
-              icon: <MapPin className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
+              icon: <MapPin className="text-3xl sm:text-4xl text-[#3498db] hover:scale-110 transition-transform cursor-pointer" />,
               title: "Location",
               value: "Satdobato, Lalitpur, Nepal"
             }].map((item, idx) => (
@@ -215,8 +216,8 @@ const Contact = () => {
 
                 {item.icon}
                 <div>
-                  <p className="text-sm sm:text-lg font-semibold">{item.title}</p>
-                  <p className="text-sm sm:text-base hover:text-[#3498db] cursor-pointer">{item.value}</p>
+                  <p className="text-sm sm:text-lg font-bold text-gray-900">{item.title}</p>
+                  <p className="text-sm sm:text-base font-medium text-gray-700 hover:text-[#3498db] cursor-pointer transition-colors">{item.value}</p>
                 </div>
               </div>
 
@@ -239,8 +240,8 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center w-full max-w-5xl space-y-4"
         >
-          <h2 className="text-2xl sm:text-4xl font-bold">Our Location</h2>
-          <p className="text-base sm:text-lg font-medium text-gray-200">Visit us at our office in Satdobato, Lalitpur</p>
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900">Our Location</h2>
+          <p className="text-base sm:text-lg font-medium text-gray-700">Visit us at our office in Satdobato, Lalitpur</p>
           <MapEmbed location="27.658, 85.323" />
         </motion.div>
 

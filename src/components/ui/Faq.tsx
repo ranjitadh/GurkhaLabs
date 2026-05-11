@@ -41,7 +41,7 @@ const Faq: React.FC = () => {
   }
 
   return (
-    <section className="text-white mt-12 flex flex-col items-center px-4 sm:px-6 lg:px-8 mb-8">
+    <section className="text-gray-900 mt-12 flex flex-col items-center px-4 sm:px-6 lg:px-8 mb-8">
       <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-center">
         FAQ
       </h1>
@@ -52,14 +52,14 @@ const Faq: React.FC = () => {
           <div key={index} className="transition-all duration-300">
             <button
               onClick={() => toggleAnswer(index)}
-              className={`w-full text-left text-sm sm:text-base md:text-lg font-semibold 
-                px-4 py-3 shadow flex justify-between items-center border rounded-xl
-                backdrop-blur-md bg-white/10 text-white hover:bg-white/20
+              className={`w-full text-left text-sm sm:text-base md:text-lg font-bold 
+                px-4 py-4 shadow-sm flex justify-between items-center border border-gray-100 rounded-xl
+                backdrop-blur-md bg-white/60 text-gray-900 hover:bg-white/80
                 transition-all duration-300`}
             >
               <span className="flex-1 pr-4">{faq.question}</span>
               <ChevronDown
-                className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-[#3498db]' : ''}`}
                 size={24}
               />
             </button>
@@ -69,7 +69,7 @@ const Faq: React.FC = () => {
                 ${openIndex === index ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'}
               `}
             >
-              <p className="backdrop-blur-lg bg-white/10 text-white text-sm sm:text-base px-4 py-3 shadow border border-white/20 rounded-xl">
+              <p className="backdrop-blur-lg bg-white/40 text-gray-700 font-medium text-sm sm:text-base px-4 py-4 shadow-inner border border-gray-100 rounded-xl">
                 {faq.answer}
               </p>
             </div>

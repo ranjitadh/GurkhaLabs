@@ -73,9 +73,9 @@ const Navbar: React.FC = () => {
             className="flex-shrink-0 flex items-center"
           >
             <Image
-              src="/assets/Images/gurkhaslabs_logo.svg"
+              src="/assets/Images/gurkhaslabs color black.svg"
               alt="Company Logo"
-              width={48}
+              width={160}
               height={48}
               priority
               className="object-contain"
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                 <Link
                   href={link.href}
                   className={clsx(
-                    "text-gray-100 hover:text-[#3498db] px-1 transition duration-300",
+                    "text-gray-800 hover:text-[#3498db] px-1 transition duration-300",
                     pathname === link.href
                       ? "text-[#3498db]"
                       : ""
@@ -127,9 +127,9 @@ const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? (
-                <FiX className="text-white text-3xl" />
+                <FiX className="text-gray-800 text-3xl" />
               ) : (
-                <FiMenu className="text-white text-3xl" />
+                <FiMenu className="text-gray-800 text-3xl" />
               )}
             </button>
           </div>
@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="md:hidden bg-[#103045] px-4 pb-4 pt-2 space-y-3 text-white font-semibold text-lg overflow-hidden"
+            className="md:hidden bg-white/90 backdrop-blur-md shadow-lg px-4 pb-4 pt-2 space-y-3 text-gray-800 font-semibold text-lg overflow-hidden border-t border-gray-100"
           >
             {navLinks.map((link) => (
               <Link
@@ -155,7 +155,7 @@ const Navbar: React.FC = () => {
                   "block py-2 px-2 rounded transition duration-200",
                   pathname === link.href
                     ? "text-[#3498db] font-bold"
-                    : "text-white hover:text-[#3498db]"
+                    : "text-gray-800 hover:text-[#3498db]"
                 )}
               >
                 {link.name}
@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
             ))}
 
             <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              <button className="mt-4 w-full bg-white text-black hover:bg-[#3498db] hover:text-white font-bold py-2 px-4 rounded-full transition duration-300">
+              <button className="mt-4 w-full bg-[#103045] text-white hover:bg-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300 shadow-md">
                 Get in Touch
               </button>
             </Link>
