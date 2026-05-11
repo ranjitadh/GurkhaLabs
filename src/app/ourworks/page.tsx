@@ -12,13 +12,13 @@ import OurWorksSkeleton from "@/components/ui/Skeleton/our-works";
 const Page = () => {
   return (
     <Suspense fallback={<OurWorksSkeleton />}>
-      <div className="bg-gradient-to-br from-[#103045] via-gray-900 to-black min-h-screen pt-24">
+      <div className="bg-transparent min-h-screen pt-24">
       {/* Heading */}
       <QuoteHeading
         text={
-          <p className=" px-4 sm:px-8 font-extrabold text-white text-3xl sm:text-4xl md:text-5xl flex justify-center items-center text-center underline decoration-3 decoration-[#3498db]">
+          <p className=" px-4 sm:px-8 font-extrabold text-gray-900 text-3xl sm:text-4xl md:text-5xl flex justify-center items-center text-center underline decoration-3 decoration-[#3498db]">
             Some of our&nbsp;
-            <span className="text-white underline decoration-4 decoration-amber-500">
+            <span className="text-gray-900">
               projects
             </span>
           </p>

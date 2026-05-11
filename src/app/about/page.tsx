@@ -18,7 +18,7 @@ const fadeInUp = {
 const About = () => {
   return (
     <Suspense fallback={<AboutSkeleton />}>
-      <div className="bg-transparent text-white overflow-hidden pt-24">
+      <div className="bg-transparent text-gray-900 overflow-hidden pt-24">
 
       <motion.div 
         initial="hidden"
@@ -33,13 +33,13 @@ const About = () => {
             alt="Company"
             height={400}
             width={500}
-            className="rounded-2xl shadow-lg drop-shadow-[0_0_15px_rgba(52,152,219,0.2)]"
+            className="rounded-2xl shadow-xl drop-shadow-[0_0_15px_rgba(52,152,219,0.1)]"
           />
         </div>
 
-        <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10 hover:border-[#3498db] transition-all duration-300">
+        <div className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-[#3498db] transition-all duration-300">
           <QuoteHeading text="Our Company" className="text-3xl font-bold text-[#3498db] mb-4" />
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed font-medium">
             <span className="font-extrabold text-[#3498db] tracking-wider">
               GurkhasLabs,
             </span>{" "}
@@ -62,9 +62,9 @@ const About = () => {
         variants={fadeInUp}
         className="px-6 md:px-28 py-16 grid md:grid-cols-2 gap-10 items-center"
       >
-        <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10 hover:border-[#ff903e] transition-all duration-300 order-2 md:order-1">
+        <div className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-[#ff903e] transition-all duration-300 order-2 md:order-1">
           <QuoteHeading text="Our Vision" className="text-3xl font-bold text-[#ff903e] mb-4" />
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed font-medium">
             Our vision is to be one of a kind in technology solutions, recognized
             for our creativity, innovation, and unwavering dedication to
             excellence. We strive to empower businesses by providing cutting-edge
@@ -80,7 +80,7 @@ const About = () => {
             alt="Vision"
             height={400}
             width={500}
-            className="rounded-2xl shadow-lg drop-shadow-[0_0_15px_rgba(255,144,62,0.2)]"
+            className="rounded-2xl shadow-xl drop-shadow-[0_0_15px_rgba(255,144,62,0.1)]"
           />
         </div>
       </motion.div>
@@ -98,13 +98,13 @@ const About = () => {
             alt="Mission"
             height={400}
             width={500}
-            className="rounded-2xl shadow-lg drop-shadow-[0_0_15px_rgba(52,152,219,0.2)]"
+            className="rounded-2xl shadow-xl drop-shadow-[0_0_15px_rgba(52,152,219,0.1)]"
           />
         </div>
 
-        <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10 hover:border-[#3498db] transition-all duration-300">
+        <div className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-[#3498db] transition-all duration-300">
           <QuoteHeading text="Our Mission" className="text-3xl font-bold text-[#3498db] mb-4" />
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed font-medium">
             Our mission is to deliver innovative and customized tech solutions
             that meet the unique needs of each client. We are dedicated to
             providing exceptional service and achieving outstanding results. Our

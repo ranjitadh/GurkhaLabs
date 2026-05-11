@@ -61,7 +61,7 @@ export default function Page() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="bg-transparent grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-12 md:py-16 text-white font-bold leading-tight"
+        className="bg-transparent grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-12 md:py-16 text-gray-900 font-bold leading-tight"
       >
         {/* Left Column: Text */}
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left gap-4">
@@ -69,17 +69,17 @@ export default function Page() {
             text={
               <StaggeredLetter
                 text="Service"
-                className="text-5xl sm:text-6xl lg:text-7xl"
+                className="text-5xl sm:text-6xl lg:text-7xl text-gray-900"
               />
             }
           />
           <StaggeredLetter
             text="That Sparks"
-            className="text-5xl sm:text-6xl lg:text-7xl"
+            className="text-5xl sm:text-6xl lg:text-7xl text-gray-900"
           />
           <StaggeredLetter
             text="Growth"
-            className="text-5xl sm:text-6xl lg:text-7xl"
+            className="text-5xl sm:text-6xl lg:text-7xl text-[#3498db]"
           />
         </div>
         {/* Right Column: Image with floating animation */}
@@ -100,23 +100,24 @@ export default function Page() {
             height={1000}
             width={1000}
             priority
-            className="max-w-full h-auto drop-shadow-2xl"
+            className="max-w-full h-auto drop-shadow-xl"
           />
         </motion.div>
       </motion.div>
 
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, type: "spring" }}
-        className="mt-20 flex items-center justify-center gap-3 text-white text-3xl md:text-5xl font-bold underline decoration-4 decoration-[#3498db]"
+        className="mt-20"
       >
         <QuoteHeading
-          className="text-5xl md:text-5xl font-bold text-center mb-10"
+          as="h1"
+          className="text-5xl md:text-5xl font-bold text-center mb-10 text-gray-900"
           text="Our Services"
         />
-      </motion.h1>
+      </motion.div>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -124,7 +125,7 @@ export default function Page() {
         variants={{
           visible: { transition: { staggerChildren: 0.1 } },
         }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-12 text-white font-semibold"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-12 text-gray-800 font-semibold"
       >
         {[
           { icon: <Laptop className="h-6 w-6" />, label: 'Web Development' },
@@ -173,7 +174,7 @@ export default function Page() {
             }}
             whileHover={{ scale: 1.05, x: 10 }}
           >
-            <div className="group-hover:rotate-12 transition-transform duration-300">
+            <div className="group-hover:rotate-12 transition-transform duration-300 text-[#3498db]">
               {service.icon}
             </div>
             <span className="group-hover:tracking-wider transition-all duration-300">{service.label}</span>
@@ -187,17 +188,17 @@ export default function Page() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-transparent text-white px-4 py-16 text-4xl"
+        className="bg-transparent text-gray-900 px-4 py-16 text-4xl"
       >
-        <QuoteHeading text="Enhance your" />
+        <QuoteHeading text="Skyrocket your" className="text-gray-900" />
         <p className="text-2xl sm:text-4xl font-bold text-center mb-6">
           <motion.span 
-            animate={{ color: ["#fff", "#3294db", "#fff"] }}
+            animate={{ color: ["#111", "#3294db", "#111"] }}
             transition={{ duration: 3, repeat: Infinity }}
             className="underline decoration-[#3294db]"
           >
             productivity
-          </motion.span> with our expert solutions.
+          </motion.span> with us.
         </p>
       </motion.div>
 
@@ -225,7 +226,7 @@ export default function Page() {
               subtitle={section.subtitle}
               description={section.content}
               rotate="y"
-              className="h-60 w-full max-w-[320px] sm:max-w-md mx-auto hover:shadow-[0_0_30px_rgba(52,152,219,0.5)] transition-shadow duration-500"
+              className="h-60 w-full max-w-[320px] sm:max-w-md mx-auto shadow-md hover:shadow-[0_0_30px_rgba(52,152,219,0.2)] transition-shadow duration-500"
             />
           </motion.div>
         ))}
@@ -238,23 +239,23 @@ export default function Page() {
         transition={{ duration: 0.8 }}
         className="text-center mt-20"
       >
-        <div className="flex font-bold text-white justify-center items-center text-2xl sm:text-4xl gap-4">
+        <div className="flex font-bold text-gray-900 justify-center items-center text-2xl sm:text-4xl gap-4">
           <Image
             src="/assets/Images/customer-service.png"
             height={50}
             width={50}
             alt="customer service"
           />
-          <span className="font-bold text-white">Get in Touch</span>
+          <span className="font-bold text-gray-900">Get in Touch</span>
         </div>
-        <p className="mt-4 font-bold text-lg text-white">Let&apos;s Discuss Your Need</p>
+        <p className="mt-4 font-bold text-lg text-gray-700">Let&apos;s Discuss Your Need</p>
         <div className="mt-6 flex justify-center">
           <a href="/contact">
             <SwipeButton
               className="cursor-pointer"
-              firstClass="bg-white text-black rounded"
+              firstClass="bg-[#103045] text-white rounded shadow-lg"
               firstText="Contact us"
-              secondClass="bg-transparent text-white border border-white"
+              secondClass="bg-white text-[#103045] border border-[#103045]"
               secondText="Contact us"
             />
           </a>

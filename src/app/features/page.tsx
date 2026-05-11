@@ -39,7 +39,7 @@ const fadeInRight = {
 const Page = () => {
   return (
     <Suspense fallback={<FeatureSkelton />}>
-      <div className="bg-transparent text-white w-full overflow-hidden pt-24">
+      <div className="bg-transparent text-gray-900 w-full overflow-hidden pt-24">
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row w-full">
         <motion.div
@@ -49,18 +49,18 @@ const Page = () => {
           variants={fadeInUp}
           className="flex flex-col justify-center items-center lg:items-start w-full px-6 md:px-20 py-20 text-center lg:text-left"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-gray-900">
             Skyrocket your <br />
-            productivity <br />
+            <span className="text-[#3498db]">productivity</span> <br />
             with us.
           </h1>
           <div className="mt-8">
             <Link href="/contact">
               <SwipeButton
                 className="cursor-pointer"
-                firstClass="bg-white text-black rounded"
+                firstClass="bg-[#103045] text-white rounded shadow-lg"
                 firstText="Contact us"
-                secondClass="bg-transparent text-white border border-white"
+                secondClass="bg-white text-[#103045] border border-[#103045]"
                 secondText="Contact us"
               />
             </Link>
@@ -79,7 +79,7 @@ const Page = () => {
             width={400}
             height={400}
             alt="feature"
-            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-110"
+            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-110 drop-shadow-xl"
           />
         </motion.div>
       </div>
@@ -92,7 +92,7 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
+        className="flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-gray-900"
       >
         <div className="w-full md:w-1/2 flex justify-center">
           <Image
@@ -100,20 +100,20 @@ const Page = () => {
             width={500}
             height={500}
             alt="Manage Data"
-            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-105"
+            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-105 shadow-xl rounded-2xl"
           />
         </div>
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold">Manage your Data</h2>
+        <div className="w-full md:w-1/2 text-center md:text-left md:pl-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold">Manage your Data</h2>
           <Link href="/services">
-            <span className="text-[#3498db] text-xl inline-block mt-4">
-              Browse Our Services <ArrowBigRightDash className="inline text-white" />
+            <span className="text-[#3498db] text-xl font-bold inline-block mt-4 hover:underline">
+              Browse Our Services <ArrowBigRightDash className="inline text-[#103045]" />
             </span>
           </Link>
-          <div className="mt-6 flex justify-center md:justify-start space-x-6 text-3xl">
-            <FaDatabase className="hover:text-[#3498db]" />
-            <FaCloud className="hover:text-[#3498db]" />
-            <FaMobileAlt className="hover:text-[#3498db]" />
+          <div className="mt-6 flex justify-center md:justify-start space-x-6 text-3xl text-[#103045]">
+            <FaDatabase className="hover:text-[#3498db] transition-colors" />
+            <FaCloud className="hover:text-[#3498db] transition-colors" />
+            <FaMobileAlt className="hover:text-[#3498db] transition-colors" />
           </div>
         </div>
       </motion.div>
@@ -124,21 +124,21 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="flex flex-col md:flex-row items-center justify-center py-16 px-36 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
+        className="flex flex-col md:flex-row items-center justify-center py-16 px-36 md:px-20 space-y-10 md:space-y-0 bg-transparent text-gray-900"
       >
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="w-full md:w-1/2 text-center md:text-left md:pr-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold">
             Develop your Application
           </h2>
           <Link href="/services">
-            <span className="text-[#3498db] text-xl inline-block mt-4">
-              Browse Our Services <ArrowBigRightDash className="inline text-white" />
+            <span className="text-[#3498db] text-xl font-bold inline-block mt-4 hover:underline">
+              Browse Our Services <ArrowBigRightDash className="inline text-[#103045]" />
             </span>
           </Link>
-          <div className="mt-6 flex justify-center md:justify-start space-x-6 text-3xl">
-            <FaAppStoreIos className="hover:text-[#3498db]" />
-            <GiProcessor className="hover:text-[#3498db]" />
-            <BiLogoPlayStore className="hover:text-[#3498db]" />
+          <div className="mt-6 flex justify-center md:justify-start space-x-6 text-3xl text-[#103045]">
+            <FaAppStoreIos className="hover:text-[#3498db] transition-colors" />
+            <GiProcessor className="hover:text-[#3498db] transition-colors" />
+            <BiLogoPlayStore className="hover:text-[#3498db] transition-colors" />
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center">
@@ -147,7 +147,7 @@ const Page = () => {
             width={500}
             height={500}
             alt="Develop App"
-            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-105"
+            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-105 shadow-xl rounded-2xl"
           />
         </div>
       </motion.div>
@@ -158,7 +158,7 @@ const Page = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInRight}
-        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-white"
+        className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-20 space-y-10 md:space-y-0 bg-transparent text-gray-900"
       >
         <div className="w-full md:w-1/2 flex justify-center">
           <Image
@@ -166,22 +166,22 @@ const Page = () => {
             width={500}
             height={500}
             alt="Marketing"
-            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-105"
+            className="w-full max-w-[400px] h-auto transition-all duration-300 ease-in-out hover:scale-105 shadow-xl rounded-2xl"
           />
         </div>
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="w-full md:w-1/2 text-center md:text-left md:pl-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold">
             Marketing and Advertisement
           </h2>
           <Link href="/services">
-            <span className="text-[#3498db] text-xl inline-block mt-4">
-              Browse Our Services <ArrowBigRightDash className="inline text-white" />
+            <span className="text-[#3498db] text-xl font-bold inline-block mt-4 hover:underline">
+              Browse Our Services <ArrowBigRightDash className="inline text-[#103045]" />
             </span>
           </Link>
-          <div className="mt-6 flex justify-center md:justify-start space-x-6 text-3xl">
-            <FaAppStoreIos className="hover:text-[#3498db]" />
-            <GiProcessor className="hover:text-[#3498db]" />
-            <BiLogoPlayStore className="hover:text-[#3498db]" />
+          <div className="mt-6 flex justify-center md:justify-start space-x-6 text-3xl text-[#103045]">
+            <FaAppStoreIos className="hover:text-[#3498db] transition-colors" />
+            <GiProcessor className="hover:text-[#3498db] transition-colors" />
+            <BiLogoPlayStore className="hover:text-[#3498db] transition-colors" />
           </div>
         </div>
       </motion.div>

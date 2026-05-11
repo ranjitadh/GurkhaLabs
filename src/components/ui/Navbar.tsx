@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import SlideArrowButton from "@/components/animata/button/side-arrow-button";
@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -73,9 +74,9 @@ const Navbar: React.FC = () => {
             className="flex-shrink-0 flex items-center"
           >
             <Image
-              src="/assets/Images/gurkhaslabs_logo.svg"
+              src="/assets/Images/gurkhaslabs color black.svg"
               alt="Company Logo"
-              width={48}
+              width={160}
               height={48}
               priority
               className="object-contain"
@@ -99,7 +100,7 @@ const Navbar: React.FC = () => {
                 <Link
                   href={link.href}
                   className={clsx(
-                    "text-gray-100 hover:text-[#3498db] px-1 transition duration-300",
+                    "text-gray-800 hover:text-[#3498db] px-1 transition duration-300",
                     pathname === link.href
                       ? "text-[#3498db]"
                       : ""
@@ -118,18 +119,16 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <Link href="/contact">
-              <SlideArrowButton primaryColor="#103045" text="Get in Touch" />
-            </Link>
+            <SlideArrowButton primaryColor="#103045" text="Get in Touch" onClick={() => router.push("/contact")} />
           </motion.div>
 
           {/* Mobile Menu Icon */}
           <div className="md:hidden flex items-center">
             <button onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? (
-                <FiX className="text-white text-3xl" />
+                <FiX className="text-gray-800 text-3xl" />
               ) : (
-                <FiMenu className="text-white text-3xl" />
+                <FiMenu className="text-gray-800 text-3xl" />
               )}
             </button>
           </div>
@@ -144,7 +143,7 @@ const Navbar: React.FC = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="md:hidden bg-[#103045] px-4 pb-4 pt-2 space-y-3 text-white font-semibold text-lg overflow-hidden"
+            className="md:hidden bg-white/90 backdrop-blur-md shadow-lg px-4 pb-4 pt-2 space-y-3 text-gray-800 font-semibold text-lg overflow-hidden border-t border-gray-100"
           >
             {navLinks.map((link) => (
               <Link
@@ -155,17 +154,19 @@ const Navbar: React.FC = () => {
                   "block py-2 px-2 rounded transition duration-200",
                   pathname === link.href
                     ? "text-[#3498db] font-bold"
-                    : "text-white hover:text-[#3498db]"
+                    : "text-gray-800 hover:text-[#3498db]"
                 )}
               >
                 {link.name}
               </Link>
             ))}
 
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              <button className="mt-4 w-full bg-white text-black hover:bg-[#3498db] hover:text-white font-bold py-2 px-4 rounded-full transition duration-300">
-                Get in Touch
-              </button>
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-4 block w-full bg-[#103045] text-white hover:bg-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300 shadow-md text-center"
+            >
+              Get in Touch
             </Link>
           </motion.div>
         )}

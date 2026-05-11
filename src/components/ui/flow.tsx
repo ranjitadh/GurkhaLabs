@@ -5,7 +5,7 @@ import Image from "next/image";
 const workflow = () => {
   return (
     <>
-      <div className="bg-transparent text-white text-center py-10 sm:py-16">
+      <div className="bg-transparent text-gray-900 text-center py-10 sm:py-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold px-4">
           Services that make your workflow{" "}
           <span className="text-[#3498db]">easier.</span>
@@ -31,7 +31,7 @@ const workflow = () => {
           ].map((service, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="flex flex-col items-center text-center backdrop-blur-md bg-white/60 border border-gray-100 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="overflow-hidden mb-4">
                 <Image
@@ -45,7 +45,7 @@ const workflow = () => {
               <h3 className="text-xl sm:text-2xl md:text-3xl text-[#3498db] font-bold mb-2">
                 {service.title}
               </h3>
-              <p className="text-sm sm:text-base leading-relaxed max-w-xs text-gray-200">
+              <p className="text-sm sm:text-base leading-relaxed max-w-xs text-gray-700 font-medium">
                 {service.desc}
               </p>
             </div>
@@ -53,7 +53,7 @@ const workflow = () => {
         </div>
       </div>
 
-      <div className="bg-transparent text-white py-10 sm:py-16">
+      <div className="bg-transparent text-gray-900 py-10 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
           {[
             {
@@ -71,7 +71,7 @@ const workflow = () => {
           ].map((service, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="flex flex-col items-center text-center backdrop-blur-md bg-white/60 border border-gray-100 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="overflow-hidden mb-4">
                 <Image
@@ -85,7 +85,7 @@ const workflow = () => {
               <h3 className="text-xl sm:text-2xl md:text-3xl text-[#3498db] font-bold mb-2">
                 {service.title}
               </h3>
-              <p className="text-sm sm:text-base leading-relaxed max-w-xs text-gray-200">
+              <p className="text-sm sm:text-base leading-relaxed max-w-xs text-gray-700 font-medium">
                 {service.desc}
               </p>
             </div>

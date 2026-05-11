@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import SkeletonLoader from "@/components/ui/skeletonloader";
-import dynamic from 'next/dynamic';
-import { Suspense } from "react";
-
-const ChatBotWrapper = dynamic(() => import("@/components/ui/SarathiBot"));
-
+import ClientLayout from "@/components/ui/ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,16 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-//need to update
-
 export const metadata: Metadata = {
-  title: "GurkhasLabs",
- keywords :[
-
-
+  title: "GurkhasLabs – Transform Tech, Inspiring Solutions",
+  keywords :[
   
   // Web Design
-
   "web design",
   "website design",
   "website redesign services",
@@ -45,9 +33,6 @@ export const metadata: Metadata = {
   "CMS web design",
   "WordPress website design",
   "Shopify website design",
-
-
-
 
   // Web Development
   "web development",
@@ -66,8 +51,6 @@ export const metadata: Metadata = {
   "HTML5 web design",
   "CSS3 styling",
   "JavaScript development",
-
-
 
   // SEO & Marketing
   "seo",
@@ -96,7 +79,7 @@ export const metadata: Metadata = {
   "digital marketing Kathmandu",
 ],
 
-  description: "GurkhasLabs offers innovative web design, web development, website development,graphics design, UI/UX, app development, digital marketing, and IT consulting services tailored for your business success.",
+  description: "GurkhasLabs offers innovative web design, web development, website development, graphics design, UI/UX, app development, digital marketing, and IT consulting services tailored for your business success.",
   metadataBase: new URL("https://www.gurkhaslabs.com"),
 };
 
@@ -108,21 +91,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // {/* remove black after using vantajs and use bg-transparent*/}
-
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-        <Navbar />
-
-        {/* <About/> */}
-
-         <Suspense fallback={<SkeletonLoader />}>{children}</Suspense>
-          <Footer />
-          <ChatBotWrapper />
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
-
-     
-            
     </html>
   );
 }
+
