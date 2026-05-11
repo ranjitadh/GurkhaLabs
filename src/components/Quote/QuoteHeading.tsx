@@ -4,13 +4,14 @@ import React from "react";
 interface QuoteHeadingProps {
   text: React.ReactNode;
   className?: string;
+  as?: React.ElementType;
 }
 
-const QuoteHeading = ({ text, className }: QuoteHeadingProps) => {
+const QuoteHeading = ({ text, className, as: Component = "div" }: QuoteHeadingProps) => {
   return (
-    <div
-    suppressHydrationWarning
-      className={`mt-20 flex items-center justify-center gap-3 text-white font-bold ${className}`}
+    <Component
+      suppressHydrationWarning
+      className={`mt-20 flex items-center justify-center gap-3 text-white font-bold underline decoration-4 decoration-[#3498db] ${className}`}
     >
       {/* Opening Quote */}
       <svg
@@ -24,9 +25,7 @@ const QuoteHeading = ({ text, className }: QuoteHeadingProps) => {
       </svg>
 
       {/* Text */}
-      <span className="underline decoration-4 decoration-[#3498db]">
-        {text}
-      </span>
+      {text}
 
       {/* Closing Quote */}
       <svg
@@ -38,7 +37,7 @@ const QuoteHeading = ({ text, className }: QuoteHeadingProps) => {
       >
         <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
       </svg>
-    </div>
+    </Component>
   );
 };
 

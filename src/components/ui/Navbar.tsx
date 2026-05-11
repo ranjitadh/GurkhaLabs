@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import SlideArrowButton from "@/components/animata/button/side-arrow-button";
@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -118,9 +119,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <Link href="/contact">
-              <SlideArrowButton primaryColor="#103045" text="Get in Touch" />
-            </Link>
+            <SlideArrowButton primaryColor="#103045" text="Get in Touch" onClick={() => router.push("/contact")} />
           </motion.div>
 
           {/* Mobile Menu Icon */}
@@ -162,10 +161,12 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
 
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              <button className="mt-4 w-full bg-[#103045] text-white hover:bg-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300 shadow-md">
-                Get in Touch
-              </button>
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-4 block w-full bg-[#103045] text-white hover:bg-[#3498db] font-bold py-2 px-4 rounded-full transition duration-300 shadow-md text-center"
+            >
+              Get in Touch
             </Link>
           </motion.div>
         )}
