@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import SkeletonLoader from "@/components/ui/skeletonloader";
-import dynamic from 'next/dynamic';
-import { Suspense } from "react";
-
-const ChatBotWrapper = dynamic(() => import("@/components/ui/SarathiBot"));
-const VantaNetBackground = dynamic(() => import("@/components/ui/Vantabg"), { ssr: false });
+import ClientLayout from "@/components/ui/ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,31 +93,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
-        <VantaNetBackground 
-          options={{
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x3498db,
-            backgroundColor: 0x103045,
-            points: 10.00,
-            maxDistance: 20.00,
-            spacing: 15.00
-          }}
-        >
-          <Navbar />
-          <Suspense fallback={<SkeletonLoader />}>
-            <main className="relative z-10">
-              {children}
-            </main>
-          </Suspense>
-          <Footer />
-          <ChatBotWrapper />
-        </VantaNetBackground>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
