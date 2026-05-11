@@ -2,6 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaSquareInstagram } from "react-icons/fa6";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   const currentDate = new Date();
@@ -24,9 +25,9 @@ const Footer = () => {
                 "IT Consultation",
               ].map((service, index) => (
                 <li key={index}>
-                  <a href="/services" className="hover:text-[#3498db] transition-colors">
+                  <Link href="/services" className="hover:text-[#3498db] transition-colors">
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -38,9 +39,9 @@ const Footer = () => {
             <ul className="space-y-3 ml-10">
               {["Company", "Vision", "Mission", "Team"].map((item, index) => (
                 <li key={index}>
-                  <a href="about" className="hover:text-[#3498db] transition-colors">
+                  <Link href="/about" className="hover:text-[#3498db] transition-colors">
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -53,12 +54,12 @@ const Footer = () => {
               {["Job Openings", "Employee Success", "Case Study"].map(
                 (item, index) => (
                   <li key={index}>
-                    <a
-                      href="contact"
+                    <Link
+                      href="/contact"
                       className="hover:text-[#3498db] transition-colors"
                     >
                       {item}
-                    </a>
+                    </Link>
                   </li>
                 )
               )}
@@ -107,12 +108,12 @@ const Footer = () => {
         {/* Bottom Links */}
         <div className="border-t border-gray-200 pt-8 text-center">
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-6 font-medium">
-            <a href="about" className="hover:text-[#3498db] transition-colors">
+            <Link href="/about" className="hover:text-[#3498db] transition-colors">
               Privacy Policy
-            </a>
-            <a href="about" className="hover:text-[#3498db] transition-colors">
+            </Link>
+            <Link href="/about" className="hover:text-[#3498db] transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
 
           {/* Socials */}

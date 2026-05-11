@@ -105,18 +105,19 @@ export default function Page() {
         </motion.div>
       </motion.div>
 
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, type: "spring" }}
-        className="mt-20 flex items-center justify-center gap-3 text-gray-900 text-3xl md:text-5xl font-bold underline decoration-4 decoration-[#3498db]"
+        className="mt-20"
       >
         <QuoteHeading
+          as="h1"
           className="text-5xl md:text-5xl font-bold text-center mb-10 text-gray-900"
           text="Our Services"
         />
-      </motion.h1>
+      </motion.div>
       <motion.div
         initial="hidden"
         whileInView="visible"
