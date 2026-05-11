@@ -189,7 +189,7 @@ export default function Page() {
         transition={{ duration: 0.8 }}
         className="bg-transparent text-gray-900 px-4 py-16 text-4xl"
       >
-        <QuoteHeading text="Enhance your" className="text-gray-900" />
+        <QuoteHeading text="Skyrocket your" className="text-gray-900" />
         <p className="text-2xl sm:text-4xl font-bold text-center mb-6">
           <motion.span 
             animate={{ color: ["#111", "#3294db", "#111"] }}
@@ -197,7 +197,7 @@ export default function Page() {
             className="underline decoration-[#3294db]"
           >
             productivity
-          </motion.span> with our expert solutions.
+          </motion.span> with us.
         </p>
       </motion.div>
 
