@@ -10,9 +10,6 @@ import QuoteHeading from '@/components/Quote/QuoteHeading';
 import HomeSkeleton from '@/components/ui/Skeleton/home';
 
 // Dynamic imports for heavy components
-const Teams = dynamic(() => import('@/components/ui/Teams'), { ssr: false });
-const TestiMonials = dynamic(() => import('@/components/ui/TestiMonials'), { ssr: false });
-const Faq = dynamic(() => import('@/components/ui/Faq'), { ssr: false });
 const FlipCard = dynamic(() => import('@/components/animata/container/Flipcard'), { ssr: false });
 const SwipeButton = dynamic(() => import('@/components/animata/button/swipe-button'), { ssr: false });
 const StaggeredLetter = dynamic(() => import('@/components/animata/text/staggered-letter'), { ssr: false });

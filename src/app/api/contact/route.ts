@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { InquiryType, ServiceType } from "@/generated/prisma";
+import { InquiryType, ServiceType } from "@prisma/client";
 
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body: { name: string, inquryType: InquiryType, serviceRequired: ServiceType, email: string, message: string } = await req.json();
     const { name, inquryType, serviceRequired, email, message } = body;
 
     // Basic validation
@@ -45,10 +45,11 @@ export async function POST(req: Request) {
       { success: true, contact },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating contact:", error);
+    const errorMessage = error instanceof Error ? error.message : "Failed to save contact";
     return NextResponse.json(
-      { error: error.message || "Failed to save contact" },
+      { error: errorMessage },
       { status: 500 }
     );
   }
