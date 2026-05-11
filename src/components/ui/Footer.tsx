@@ -65,16 +65,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Us */}
           <div>
             <h3 className="text-lg font-bold mb-4  ml-10">Contact Us</h3>
             <p className="mb-2 flex items-center  ml-10">
               <Mail className="mr-2 h-5 w-5" />
               <a
-                href="mailto:admin@admin.com"
+                href="mailto:info@gurkhaslabs.com"
                 className="hover:text-gray-400 transition-colors"
               >
-                admin@admin.com
+                info@gurkhaslabs.com
               </a>
             </p>
             <p className="mb-2 flex items-center ml-10">

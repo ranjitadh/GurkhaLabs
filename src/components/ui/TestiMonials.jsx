@@ -5,58 +5,27 @@ const testimonials = [
   {
     text: "The graphic design team at GurkhasLabs brought our brand to life with stunning visuals and cohesive branding materials.",
     name: "Tara Karki",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/Tara%20Global%20Logo.png",
+    icon: "/assets/Images/Tara Global Logo.png",
     user: "Tara Global, Owner",
   },
   {
     text: "GurkhasLabs's digital marketing services have been a game-changer for our business. Their targeted campaigns and innovative strategies have significantly boosted our online presence.",
     name: "Aadarsh Bhattarai",
-    icon: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
-    user: "User",
+    icon: "/assets/Images/aayush.jpg",
+    user: "Marketing Partner",
   },
   {
     text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
     name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
+    icon: "/assets/Images/helios.jpg",
     user: "Helios Nepal, CEO",
   },
-   {
-    text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
-    name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
-    user: "Helios Nepal, CEO",
-  },
-   {
-    text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
-    name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
-    user: "Helios Nepal, CEO",
-  },
-   {
-    text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
-    name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
-    user: "Helios Nepal, CEO",
-  },
-   {
-    text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
-    name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
-    user: "Helios Nepal, CEO",
-  },
-   {
-    text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
-    name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
-    user: "Helios Nepal, CEO",
-  },
-   {
-    text: "GurkhasLabs transformed our outdated website into a modern, user-friendly platform. Their team’s attention to detail and commitment to our vision was exceptional.",
-    name: "Anjan",
-    icon: "https://www.gurkhaslabs.com/assets/img/associated/helios.jpg",
-    user: "Helios Nepal, CEO",
-  },
-  
+  {
+    text: "Working with GurkhasLabs was a seamless experience. They understood our technical requirements perfectly and delivered a robust mobile application.",
+    name: "Sandeep Gupta",
+    icon: "/assets/Images/application.png",
+    user: "Tech Lead, Nakab",
+  }
 ];
 
 const TestiMonials = () => {

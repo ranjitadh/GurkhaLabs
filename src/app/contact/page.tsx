@@ -196,11 +196,11 @@ const Contact = () => {
             {[{
               icon: <Phone className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
               title: "Phone",
-              value: "977-9800000098"
+              value: "+977-9748723044"
             }, {
               icon: <Mail className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
               title: "Email",
-              value: "admin@admin.com"
+              value: "info@gurkhaslabs.com"
             }, {
               icon: <MapPin className="text-3xl sm:text-4xl hover:text-[#3498db] cursor-pointer" />,
               title: "Location",

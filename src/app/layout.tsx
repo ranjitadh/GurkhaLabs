@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 import { Suspense } from "react";
 
 const ChatBotWrapper = dynamic(() => import("@/components/ui/SarathiBot"));
-
+const VantaNetBackground = dynamic(() => import("@/components/ui/Vantabg"), { ssr: false });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,16 +20,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-//need to update
-
 export const metadata: Metadata = {
-  title: "GurkhasLabs",
- keywords :[
-
-
+  title: "GurkhasLabs – Transform Tech, Inspiring Solutions",
+  keywords :[
   
   // Web Design
-
   "web design",
   "website design",
   "website redesign services",
@@ -45,9 +40,6 @@ export const metadata: Metadata = {
   "CMS web design",
   "WordPress website design",
   "Shopify website design",
-
-
-
 
   // Web Development
   "web development",
@@ -66,8 +58,6 @@ export const metadata: Metadata = {
   "HTML5 web design",
   "CSS3 styling",
   "JavaScript development",
-
-
 
   // SEO & Marketing
   "seo",
@@ -96,7 +86,7 @@ export const metadata: Metadata = {
   "digital marketing Kathmandu",
 ],
 
-  description: "GurkhasLabs offers innovative web design, web development, website development,graphics design, UI/UX, app development, digital marketing, and IT consulting services tailored for your business success.",
+  description: "GurkhasLabs offers innovative web design, web development, website development, graphics design, UI/UX, app development, digital marketing, and IT consulting services tailored for your business success.",
   metadataBase: new URL("https://www.gurkhaslabs.com"),
 };
 
@@ -108,21 +98,35 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // {/* remove black after using vantajs and use bg-transparent*/}
-
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br via-gray-900 from-[#103045] to-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
-        <Navbar />
-
-        {/* <About/> */}
-
-         <Suspense fallback={<SkeletonLoader />}>{children}</Suspense>
+        <VantaNetBackground 
+          options={{
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3498db,
+            backgroundColor: 0x103045,
+            points: 10.00,
+            maxDistance: 20.00,
+            spacing: 15.00
+          }}
+        >
+          <Navbar />
+          <Suspense fallback={<SkeletonLoader />}>
+            <main className="relative z-10">
+              {children}
+            </main>
+          </Suspense>
           <Footer />
           <ChatBotWrapper />
+        </VantaNetBackground>
       </body>
-
-     
-            
     </html>
   );
 }
+
