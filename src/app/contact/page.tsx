@@ -54,7 +54,6 @@ const Contact = () => {
 
   return (
     <Suspense fallback={<ContactSkeleton />}>
-    <Suspense fallback={<ContactSkeleton />}>
       <div className="relative bg-transparent min-h-screen flex flex-col items-center p-6 space-y-10 text-gray-900 font-bold overflow-hidden pt-24">
         <Toaster position="top-center" />
 
